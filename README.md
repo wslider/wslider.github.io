@@ -1,13 +1,23 @@
-* Portfolio Website
+## Portfolio Website
+* Pages:
+    * About Me
+    * Projects
+    * Skills
+    * Interests
+    * Social Media & Contact 
 
-Projects
+
+
+## Projects
+* Portfolio Website (hub / primary)
 - Detour 365
 - Urban Hiking 
-- Louisville Pond and Patio
+- Journal & Task App 
+- Louisville Pond and Patio Website
 
-! Capstone Project Ideas
+## Cap Project Ideas
 - GIS Web Development 
 
-About Me
+## About Me
 - Interests
 - Contact Information 
