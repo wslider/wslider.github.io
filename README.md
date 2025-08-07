@@ -2,6 +2,7 @@
 * Pages:
     * About Me
     * Projects
+    * Resume 
     * Skills
     * Interests
     * Social Media & Contact 
@@ -10,13 +11,13 @@
 
 ## Projects
 * Portfolio Website (hub / primary)
+- Code:You Web Development Capstone Project
 - Detour 365
+- Louisville Pond and Patio Website 
 - Urban Hiking 
 - Journal & Task App 
-- Louisville Pond and Patio Website
+- Limestone Quest (fun RPG game)
 
-## Cap Project Ideas
-- GIS Web Development 
 
 ## About Me
 - Interests
