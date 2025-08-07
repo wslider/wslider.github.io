@@ -1,6 +1,13 @@
-h1 {
+header {
    font-size: 4rem;
-   font-weight: 600; 
+   font-weight: 600;
+   text-align: center;
+   padding: 3%; 
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 500; 
 }
 
 .navbar {
@@ -12,6 +19,7 @@ h1 {
     flex-direction: row; 
     justify-content: space-around;
     color: whitesmoke;
+    padding-bottom: 3%; 
 }
 
 img {
