@@ -2,10 +2,10 @@ function updateCssTheme (){
     const now = new Date();
     const hour = now.getHours();
     linkElement = document.getElementById('customStyleSheet'); 
-    if (hour >= 6 && hour <= 15) {
+    if (hour >= 6 && hour <= 14) {
         linkElement.href="daytime.css"; 
     }
-    else if (hour > 15 && hour <= 19){
+    else if (hour > 14 && hour <= 19){
         linkElement.href="evening.css";
     }
     else {
