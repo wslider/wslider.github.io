@@ -17,3 +17,21 @@ updateCssTheme ();
 setInterval (updateCssTheme, 60000);
 
 // update image function or combine with update css 
+
+function updateImage () {
+    const now = new Date();
+    const hour = now.getHours(); 
+    customImage = document.getElementById('mainImage');
+        if (hour >= 6 && hour <= 14) {
+        customImage.src = "hurricaneRidge.jpg"; 
+    }
+    else if (hour > 14 && hour <= 19){
+       customImage.src="tartooshSunset.jpg";
+    }
+    else {
+        customImage.src="rainierNightSky.jpeg";
+    }
+}
+
+updateImage();
+setInterval (updateImage, 60000);
