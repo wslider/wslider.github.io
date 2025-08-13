@@ -9,15 +9,27 @@
 </head>
 <body>
     <header class="heading">William Slider</header>
-        <div class="navbar" id="topnavbar">
-                <a href="index.html">Home</a>
-                <a>About</a>
-                <a href="resume.html">Resume</a>
-                <a href="projects.html">Projects</a>
-        </div>
-    <section>
-        <img class="image" id="mainImage" src="hurricaneRidge.jpg" alt="image of Hurrican Ridge in Olympic National Park">
-    </section>
+    
+  <!-- New Vertical Dropdown Menu (for mobile)-->
+    <!-- Use CSS to make menu horizonal on desktop-->
+<div class="topnav" id="topNavBar">
+  <a class="active"onclick="navBarLinks()">Menu</a>
+  <div id="myLinks">
+     <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="interests.html">Interests</a>
+  </div>
+
+</div>
+
+
+
+
+    <main>
+        <section>
+            <img class="image" id="mainImage" src="hurricaneRidge.jpg" alt="image of Hurrican Ridge in Olympic National Park">
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

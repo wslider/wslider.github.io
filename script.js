@@ -16,6 +16,16 @@ function updateCssTheme (){
 updateCssTheme (); 
 setInterval (updateCssTheme, 60000);
 
+function navBarLinks() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+
 // update image function or combine with update css 
 
 function updateImage () {
