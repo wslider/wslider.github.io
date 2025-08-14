@@ -1,4 +1,7 @@
-body {background-color: #00062f;
+body {background-color: #070031;
     color:#ffffffdf;
     font-family:monospace, system-ui, Courier, 'Courier New', sans-serif;
 }
+
+.active {
+  background-color: black;}
