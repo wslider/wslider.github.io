@@ -9,17 +9,44 @@
 </head>
 <body>
     <header>Interests</header>
+
+    <div class="topnav" id="topNavBar">
+        <a class="active" onclick="navBarLinks()">Menu</a>
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="interests.html">Interests</a>
+        </div>
+    </div>
+<main>
+    <section>
+    <div><h3>Hiking</h3></div>
+    <div><h3>Urban Hiking</h3></div>
+    </section>
+    <section>
     <div><h2>Books</h2></div>
-    <div><h2>Movies</h2></div>
+    <div><h2>Movies</h2>
+        <ol><h3>Sci-fi / Fantasy:</h3>
+            <li>Lord of the Rings Trilogy</li>
+            <li>Journey to the Center of the Earth</li>
+            <li>Interstellar</li>
+        </ol>
+        <ol><h3>Malayalam Movies:</h3>
+            <li>Manichitrathzhu</li>
+        </ol>
+    </div>
+    </section>
 <div>
     <video controls class="video">
     <source src="rainierSlopeWaterfallEveningVid.mp4" type="video/mp4" alt="short video of a waterfall after sunset" class="video">
 </video>
 </div>
-    <button id="bigfootToggleButton"><h2>View Bigfoot Webcam</h2></button>
+    <button id="bigfootToggleButton"><h2>View The Bigfoot Webcam</h2></button>
 <div id="bigfootTargetElement" class="hiddenContent">
-    <h2>🎥Camera is currently offline .. check in later🌲</h2>
+    <h2>🎥 Camera is currently offline .. check in later🌲</h2>
 </div>
+</main>
 <script src="./interestScript.js"></script>
 </body>
 </html>
