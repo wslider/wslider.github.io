@@ -59,19 +59,15 @@ a:hover {
 }
 
 .video {
-  max-width: 90vw;
+  max-width: auto;
   max-height: 50vh;
 }
 
-.petImages {
-  max-width: 90vw;
-  max-height: 90vh;
-}
 
 @media only screen and (max-width: 600px) {
 .video {
-  max-width: 100vw;
   max-height: 50vh;
+  width: auto; 
 }
 
 }
@@ -89,8 +85,8 @@ a:hover {
 }
 
 .video {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 50vw;
+  max-height: auto;
 }
 
 }
