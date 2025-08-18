@@ -7,22 +7,29 @@
     <title>Projects Page</title>
 </head>
 <body>
-        <article id="projectsArticle">
+
+    <div class="topnav" id="topNavBar">
+        <a class="active" onclick="navBarLinks()">Menu</a>
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="interests.html">Interests</a>
+        </div>
+    </div>
+
+<header>
+    <h1>Projects</h1>
+</header>
+
+        <article class="projectsArticle" id="personalProjects">
             <section class="section">
-                    <h2>Projects</h2>
-                <h2>Projects</h2>
+                <h2>Personal Projects</h2>
                 <div class="item">
                     <h3>Journal Entry</h3>
                     <a href="https://github.com/wslider/journal_entry">View GitHub Repository</a>
                     <p>
                     Jounal Entry / Productivity Resource    
-                    </p>
-                </div>
-                <div class="item">
-                    <h3>Louisville Pond and Patio Website Build</h3>
-                    <a href="https://github.com/wslider/louisville-pond-and-patio">View GitHub Repository</a>
-                    <p>
-                        In Process - Designing a website for a local buisness in need. 
                     </p>
                 </div>
                 <div class="item">
@@ -40,5 +47,18 @@
                     </p>
             </section>
         </article>
+        <article class="projectsArticle" id="commercialProjects">
+            <section class="section">
+                <h2>Commercial Projects</h2>
+                <div class="item">
+                    <h3>Louisville Pond and Patio Website Build</h3>
+                    <a href="https://github.com/wslider/louisville-pond-and-patio">View GitHub Repository</a>
+                    <p>
+                        In Process - Designing this custom website for a local buisness. 
+                    </p>
+                </div>
+            </section>
+        </article>
+        <script src="./script.js"></script>
 </body>
 </html>
