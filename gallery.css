@@ -67,8 +67,9 @@ header {
   cursor: pointer;
 }
 
-#buttonDiv {
+.buttonDiv {
     grid-area: buttonDiv;
+    justify-self: center;
 }
 
 footer {
