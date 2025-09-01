@@ -4,7 +4,7 @@ body {
     "header header header"
     "navBar navBar navBar"
     "image image image"
-     " . button . "
+     " . buttonDiv . "
     "footer footer footer";
   grid-template-rows: 1fr 1fr 50vh 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -62,10 +62,13 @@ header {
 }
 
 #imageButton {
-  grid-area: button;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+#buttonDiv {
+    grid-area: buttonDiv;
 }
 
 footer {
