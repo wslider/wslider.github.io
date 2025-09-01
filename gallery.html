@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="daytime.css" id="customStyleSheet">
-    <title>Gallery</title> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="" id="customStyleSheet">
 </head>
 <body>
-
-<!-- image slide show using javascript 
- use an array? with image names? iterate though randomly? -->
-
-    <div class="imageContainer">
-        <image src="jennyFallLeaves.jpg" class="image" id="galleryImage" alt="randomly generated gallery image"> 
+  <header>Gallery</header>
+    <div class="topnav" id="topNavBar">
+        <a class="active" onclick="navBarLinks()">Menu</a>
+        <div id="myLinks">
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="interests.html">Interests</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
     </div>
-    <button id="imageButton">Click for Next Image</button>
-<script src="./gallery.js"></script>
+  <img id="galleryImage" src="lushWaterfall.jpeg" alt="Gallery Image">
+  <button id="imageButton">Change Image</button>
+  <footer>William Slider © 2025 Random Gallery</footer>
+  <script src="gallery.js"></script>
 </body>
 </html>

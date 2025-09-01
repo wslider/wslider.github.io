@@ -54,9 +54,6 @@ h1 {
 }
 
 
-img {
-    max-width:100%; 
-}
 
 a {
   text-decoration: none;
@@ -71,6 +68,10 @@ a:hover {
 
 .hiddenContent { 
   display:none; 
+}
+
+img {
+    max-width:100%; 
 }
 
 .video {

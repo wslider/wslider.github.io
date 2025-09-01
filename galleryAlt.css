@@ -1,0 +1,73 @@
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "navBar navBar navBar"
+    "image image image"
+     "button button button"
+    "footer footer footer";
+  grid-template-rows: 1fr 1fr 50vh 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  min-height: 100vh; /* Ensure full viewport height */
+  margin: 0;
+}
+
+header {
+  grid-area: header;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 3%;
+}
+
+.topnav {
+  grid-area: navBar;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  text-align: center;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-block; /* Changed from block for horizontal nav */
+}
+
+.topnav a.active {
+  background-color: #003f17;
+  color: white;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+#galleryImage {
+  grid-area: image;
+  max-width: 500px;
+  max-height: 50vh;
+  align-self: center;
+  justify-self: center; 
+  object-fit: contain; /* Ensure image fits without distortion */
+}
+
+#imageButton {
+  grid-area: button;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+footer {
+  grid-area: footer;
+  text-align: left;
+  color: white;
+  font-size: 0.5rem;
+  padding: 1%;
+}
