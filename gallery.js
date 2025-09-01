@@ -8,7 +8,7 @@
 
 const galleryImage = document.getElementById('galleryImage'); 
 const imageButton = document.getElementById('imageButton'); 
-const imageArray = ["lushWaterfall.jpeg", "jennyFallLeaves.jpg", "hurricaneRidge.jpg", "tartooshSunset.jpg"]; 
+const imageArray = ["lushWaterfall.jpeg", "jennyFallLeaves.jpg", "hurricaneRidge.jpg", "tartooshSunset.jpg", "rainierNightSky.jpeg"]; 
 
 
 
