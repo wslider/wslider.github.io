@@ -6,17 +6,36 @@
     // random number generator to select image from array index
     // display image src = ` image array index `+ ".jpg"`
 
-const galleryImage = document.getElementById('galleryImage'); 
-const imageButton = document.getElementById('imageButton'); 
-const imageArray = ["lushWaterfall.jpeg", "jennyFallLeaves.jpg", "hurricaneRidge.jpg", "tartooshSunset.jpg", "rainierNightSky.jpeg"]; 
+// Select DOM elements
+const galleryImage = document.getElementById('galleryImage');
+const imageButton = document.getElementById('imageButton');
+const imageCaption = document.getElementById('imageCaption');
+const imageArray = [
+  { src: 'lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' },
+  { src: 'jennyFallLeaves.jpg', alt: 'Jenny Fall Leaves', caption: 'Autumn leaves and Jenny' },
+  { src: 'hurricaneRidge.jpg', alt: 'Hurricane Ridge', caption: 'Snowy peaks at Hurricane Ridge, Olympic NP' },
+  { src: 'tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' },
+  { src: 'rainierNightSky.jpeg', alt: 'Night Sky and Mount Rainier', caption: 'Mount Rainier and Night Sky'}
+];
 
-
-
+// Function to set a random image, alt text, and caption
 function randomImage() {
-    let i = Math.floor(Math.random()* imageArray.length); 
-    galleryImage.src =  `${imageArray[i]}`; 
+  if (!galleryImage || !imageCaption || !imageArray.length) {
+    console.error('Image, caption element, or array is missing');
+    return;
+  }
+  const randomIndex = Math.floor(Math.random() * imageArray.length);
+  const selectedImage = imageArray[randomIndex];
+  galleryImage.style.opacity = 0;
+  setTimeout(() => {
+    galleryImage.src = selectedImage.src;
+    galleryImage.alt = selectedImage.alt;
+    imageCaption.textContent = selectedImage.caption;
+    galleryImage.style.opacity = 1;
+  }, 300);
 }
 
+// Add event listener for button click
 imageButton.addEventListener('click', randomImage);
 
 

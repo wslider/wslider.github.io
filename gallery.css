@@ -4,9 +4,10 @@ body {
     "header header header"
     "navBar navBar navBar"
     "image image image"
+    ". imageCaption . "
      " . buttonDiv . "
     "footer footer footer";
-  grid-template-rows: 1fr 1fr 50vh 1fr 1fr;
+  grid-template-rows: 1fr 1fr 50vh 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
     gap:2%; 
   min-height: 100vh; /* Ensure full viewport height */
@@ -59,6 +60,11 @@ header {
   align-self: center;
   justify-self: center; 
   object-fit: contain; /* Ensure image fits without distortion */
+}
+
+#imageCaption {
+  grid-area: imageCaption;  
+  justify-self: center;
 }
 
 #imageButton {
