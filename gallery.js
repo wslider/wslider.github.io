@@ -16,7 +16,7 @@ const imageArray = [
   { src: 'hurricaneRidge.jpg', alt: 'Hurricane Ridge', caption: 'Snowy peaks at Hurricane Ridge, Olympic NP' },
   { src: 'tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' },
   { src: 'rainierNightSky.jpeg', alt: 'Night Sky and Mount Rainier', caption: 'Mount Rainier and Night Sky'},
-  { src: 'eclipse-20240408.jpeg', alt: 'Image of 2025 Solar Eclipse in Totality', caption: '2025 April Solar Eclipse'}
+  { src: 'eclipse-20240408.jpeg', alt: 'Image of 2025 Solar Eclipse in Totality', caption: '2024 April Solar Eclipse'}
 ];
 
 // Function to set a random image, alt text, and caption
