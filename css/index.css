@@ -1,0 +1,29 @@
+body {
+    display: grid; 
+    grid-template-areas: 
+    "header header header"
+    "navbar navbar navbar"
+    "image image image"
+    "main main main"
+    "main main main"
+    "footer footer footer"
+    ;
+}
+
+
+
+
+
+@media only screen (min-width: 700px) {
+body {
+    display: grid; 
+    grid-template-areas: 
+    "header header header"
+    "navbar image image"
+    "navbar main main"
+    "footer footer footer"
+    ;
+}
+    
+
+}
