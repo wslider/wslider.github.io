@@ -1,29 +1,124 @@
 body {
-    display: grid; 
-    grid-template-areas: 
-    "header header header"
-    "navbar navbar navbar"
-    "image image image"
-    "main main main"
-    "main main main"
-    "footer footer footer"
-    ;
+  display: grid;
+  grid-template-columns: repeat(3, auto); 
+  grid-template-rows: repeat(5,auto); 
+}
+
+header {
+  grid-column: 1 / span 3; 
+  grid-row: 1; 
+   font-size: 4rem;
+   font-weight: 600;
+   text-align: center;
+   padding: 3%; 
+}
+
+main {
+    grid-row: 3 / span 2; 
+    grid-column: 1 / span 3; 
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 500; 
+}
+
+/* navigation menu */
+.topnav {
+  grid-row: 2;
+  grid-column: 1 / span 3; 
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Add a grey background color on mouse-over */
+
+.active {
+  background-color: #003f17;
+  color: white;
 }
 
 
 
+a {
+  text-decoration: none;
+  color:whitesmoke;
+}
+
+a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.hiddenContent { 
+  display:none; 
+}
+
+img {
+    max-width:100%; 
+}
+
+.video {
+  max-width: auto;
+  max-height: 50vh;
+}
+
+footer {
+  grid-row: 5; 
+  grid-column: 1 / span 3; 
+}
+
+@media only screen and (max-width: 700px) {
+.video {
+  max-height: 50vh;
+  width: auto; 
+} }
 
 
-@media only screen (min-width: 700px) {
+@media only screen and (min-width: 700px) {
 body {
     display: grid; 
-    grid-template-areas: 
+    grid-template-columns: 1fr 70vw 1fr;
+    grid-template-rows: 1fr 80vh 1fr;
+    gap: 3%; 
+    grid-template-areas:  
     "header header header"
-    "navbar image image"
     "navbar main main"
-    "footer footer footer"
-    ;
+    "footer footer footer";
+
 }
-    
+
+.heading  {
+    grid-area: header; 
+}
+
+.topnav  {
+    grid-area: navbar; 
+}
+
+.main {
+    grid-area: main; 
+}
+
+.footer {
+    grid-area: footer; 
+}
+
 
 }
