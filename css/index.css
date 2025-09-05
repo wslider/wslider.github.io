@@ -118,6 +118,8 @@ max-width: 40vw;
 
 .heading  {
     grid-area: header; 
+    border: solid white 5px; 
+    box-shadow: #333 5px;
 }
 
 .topnav  {
