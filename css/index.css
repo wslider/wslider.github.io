@@ -7,7 +7,7 @@ body {
 header {
   grid-column: 1 / span 3; 
   grid-row: 1; 
-   font-size: 4rem;
+   font-size: 1rem;
    font-weight: 600;
    text-align: center;
    padding: 3%; 
@@ -104,16 +104,24 @@ body {
 
 }
 
+ #mainGridContainer {
+    grid-area: main; 
+    display: flex; 
+flex-direction: row; 
+justify-content: space-around;
+ }
+
+
+#customImageContainer {
+max-width: 40vw; 
+}
+
 .heading  {
     grid-area: header; 
 }
 
 .topnav  {
     grid-area: navbar; 
-}
-
-.main {
-    grid-area: main; 
 }
 
 .footer {

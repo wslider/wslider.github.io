@@ -43,3 +43,20 @@ function updateImage() {
 updateImage();
 setInterval(updateImage, 60000);
 
+function customGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+    customGreeting = document.getElementById('customGreeting');
+    if (hour >= 6 && hour <= 14) {
+        customGreeting.textContent = "Good Day To You";
+    }
+    else if (hour > 14 && hour <= 19) {
+        customGreeting.textContent = "Have A Good Evening";
+    }
+    else {
+        customGreeting.textContent = "Have A Good Night";
+    }
+}
+
+customGreeting();
+setInterval(customGreeting, 60000);
