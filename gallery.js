@@ -11,13 +11,13 @@ const galleryImage = document.getElementById('galleryImage');
 const imageButton = document.getElementById('imageButton');
 const imageCaption = document.getElementById('imageCaption');
 const imageArray = [
-  { src: 'lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' },
-  { src: 'jennyFallLeaves.jpg', alt: 'Jenny Fall Leaves', caption: 'Autumn leaves and Jenny' },
-  { src: 'hurricaneRidge.jpg', alt: 'Hurricane Ridge', caption: 'Snowy peaks at Hurricane Ridge, Olympic NP' },
-  { src: 'tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' },
-  { src: 'rainierNightSky.jpeg', alt: 'Night Sky and Mount Rainier', caption: 'Mount Rainier and Night Sky'},
-  { src: 'eclipse-20240408.jpeg', alt: 'Image of 2025 Solar Eclipse in Totality', caption: '2024 April Solar Eclipse'},
-  { src: 'smoky-mountain-sunset.jpg', alt: 'Image of the Sunset from Clingmans Dome',caption: 'Smoky Mountain Sunset'}
+  { src: 'media/lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' },
+  { src: 'media/jennyFallLeaves.jpg', alt: 'Jenny Fall Leaves', caption: 'Autumn leaves and Jenny' },
+  { src: 'media/hurricaneRidge.jpg', alt: 'Hurricane Ridge', caption: 'Snowy peaks at Hurricane Ridge, Olympic NP' },
+  { src: 'media/tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' },
+  { src: 'media/rainierNightSky.jpeg', alt: 'Night Sky and Mount Rainier', caption: 'Mount Rainier and Night Sky'},
+  { src: 'media/eclipse-20240408.jpeg', alt: 'Image of 2025 Solar Eclipse in Totality', caption: '2024 April Solar Eclipse'},
+  { src: 'media/smoky-mountain-sunset.jpg', alt: 'Image of the Sunset from Clingmans Dome',caption: 'Smoky Mountain Sunset'}
 ];
 
 // Function to set a random image, alt text, and caption

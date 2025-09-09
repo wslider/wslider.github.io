@@ -30,13 +30,13 @@ function updateImage() {
     const hour = now.getHours();
     customImage = document.getElementById('mainImage');
     if (hour >= 6 && hour <= 14) {
-        customImage.src = "hurricaneRidge.jpg";
+        customImage.src = "media/hurricaneRidge.jpg";
     }
     else if (hour > 14 && hour <= 19) {
-        customImage.src = "tartooshSunset.jpg";
+        customImage.src = "media/tartooshSunset.jpg";
     }
     else {
-        customImage.src = "rainierNightSky.jpeg";
+        customImage.src = "media/rainierNightSky.jpeg";
     }
 }
 

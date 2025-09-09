@@ -23,6 +23,8 @@ header {
 
 main #mainContainer {
     grid-area: main; 
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -79,14 +81,14 @@ a:hover {
 #welcomeSection {
     border: solid white 5px; 
     padding: 10px;
-    max-width: 100vw;
+    max-width: 95vw;
     box-sizing: border-box;
 
 }
 
 #customImageContainer {
-    border: solid white 5px; 
-    max-width: 100vw;
+    border: solid white 3px; 
+    max-width: 95vw;
     padding: 10px; 
     box-sizing: border-box;
 }
@@ -104,6 +106,8 @@ footer {
   grid-row: 5; 
   grid-column: 1 / span 3; 
   text-align: center;
+  padding: 10px; 
+  margin: 3%
 }
 
 
