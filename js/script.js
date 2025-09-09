@@ -3,13 +3,13 @@ function updateCssTheme() {
     const hour = now.getHours();
     linkElement = document.getElementById('customStyleSheet');
     if (hour >= 6 && hour <= 14) {
-        linkElement.href = "daytime.css";
+        linkElement.href = "css/daytime.css";
     }
     else if (hour > 14 && hour <= 19){
-        linkElement.href = "evening.css";
+        linkElement.href = "css/evening.css";
     }
     else {
-        linkElement.href = "night.css";
+        linkElement.href = "css/night.css";
     }
 }
 
