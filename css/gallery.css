@@ -22,28 +22,41 @@ header {
   padding: 3%;
 }
 
+/* navigation menu */
 .topnav {
-  grid-area: navBar;
+    grid-area:navBar;
   overflow: hidden;
   background-color: #333;
-  width: 100%;
-  text-align: center;
+  position: relative;
 }
 
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
 .topnav a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  display: inline-block; /* Changed from block for horizontal nav */
+  display: block;
 }
 
-.topnav a.active {
+/* Add a grey background color on mouse-over */
+
+.active {
   background-color: #003f17;
   color: white;
 }
 
-.topnav a:hover {
+a {
+  text-decoration: none;
+  color:whitesmoke;
+}
+
+a:hover {
   text-decoration: underline;
   font-weight: 700;
   color: whitesmoke;
@@ -68,7 +81,7 @@ header {
 }
 
 #imageButton {
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 10px 20px;
   cursor: pointer;
 }
@@ -84,4 +97,10 @@ footer {
   color: white;
   font-size: 0.5rem;
   padding: 1%;
+}
+
+@media screen and (min-width: 700px) {
+  
+
+
 }
