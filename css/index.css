@@ -1,126 +1,128 @@
 body {
-  display: grid;
-  grid-template-areas: 
-  "header header header"
-  "navBar navBar navBar"
-  "main main main"
-  "main main main"
-  "footer footer footer";
-
-  grid-template-columns: repeat(3, auto); 
-  grid-template-rows: repeat(5,auto); 
-}
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "navBar"
+        "main"
+        "footer";
+    gap: 1rem; /* Reduced gap for mobile */
+    grid-template-rows: auto 25vh 1fr auto; /* Flexible rows for mobile */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif; /* Mobile-friendly font */
+    }
 
 header {
-  grid-area: header; 
-   font-size: 1rem;
-   font-weight: 600;
-   text-align: center;
-   padding: 3%; 
-    border: solid white 3px; 
-    box-shadow: #333 5px ;
+    grid-area: header;
+    font-size: 1.2rem; /* Smaller for mobile */
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem; /* Reduced padding */
+    border: 2px solid white; /* Thinner border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow */
 }
 
 main #mainContainer {
-    grid-area: main; 
+    grid-area: main;
+    display: flex;
+    flex-direction: column; /* Stack sections vertically on mobile */
+    gap: 1rem;
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 500; 
+    font-size: 1.5rem; /* Readable for mobile */
+    font-weight: 500;
 }
 
-/* navigation menu */
+h3 {
+    font-size: 1rem; /* Added for <h3> in header */
+    margin: 0.5rem 0;
+}
+
+/* Navigation menu */
 .topnav {
-    grid-area:navBar;
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
+    grid-area: navBar;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
-  display: none;
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack links vertically */
 }
 
-/* Style navigation menu links */
 .topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
+    color: white;
+    padding: 0.8rem; /* Touch-friendly padding */
+    text-decoration: none;
+    font-size: 1rem; /* Readable for mobile */
+    display: block;
+    text-align: center;
 }
-
-/* Add a grey background color on mouse-over */
 
 .active {
-  background-color: #003f17;
-  color: white;
+    background-color: #003f17;
+    color: white;
 }
 
-
-
 a {
-  text-decoration: none;
-  color:whitesmoke;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-  color: whitesmoke;
+    text-decoration: underline;
+    font-weight: 700;
+    color: whitesmoke;
 }
 
-.hiddenContent { 
-  display:none; 
+.hiddenContent {
+    display: none;
 }
 
 #welcomeSection {
-    border: solid white 3px; 
-    padding: 10px;
-    max-width: 100vw;
+    border: 2px solid white; /* Thinner for mobile */
+    padding: 1rem;
+    max-width: 100%;
     box-sizing: border-box;
-
+    font-size: 1rem; /* Readable text */
 }
 
 #customImageContainer {
-    border: solid white 3px; 
-    width: 100vw;
-    padding: 10px; 
+    border: 2px solid white;
+    width: 100%;
+    padding: 1rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 #mainImage {
-    max-width: 95vw;
-    
+    max-width: 100%; /* Fully responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .video {
-  max-width: auto;
-  max-height: 50vh;
+    max-width: 100%;
+    max-height: 40vh; /* Adjusted for mobile */
+    width: auto;
 }
 
 .footer {
-  grid-row: 5; 
-  grid-column: 1 / span 3; 
-  text-align: center;
-    padding: 5%; 
-    margin-top: 10px;
+    grid-area: footer;
+    text-align: center;
+    padding: 1rem; /* Reduced padding */
+    margin-top: 0; /* Removed to align with grid */
 }
 
 
-.video {
-  max-height: 50vh;
-  width: auto; 
-} 
 
-
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 700px) {
 body {
     display: grid; 
     grid-template-columns: 1fr 70vw 1fr;
@@ -146,6 +148,9 @@ justify-content: space-around;
 
 #customImageContainer {
 max-width: 40vw; 
+display: flex; 
+flex-direction: column;
+justify-content: flex-start;
 }
 #mainImage {
     max-width: 38vw; 

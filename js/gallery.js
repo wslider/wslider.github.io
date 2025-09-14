@@ -60,7 +60,7 @@ updateCssTheme();
 setInterval(updateCssTheme, 60000);
 
 function navBarLinks() {
-    var x = document.getElementById("myLinks");
+    const x = document.getElementById("myLinks");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {

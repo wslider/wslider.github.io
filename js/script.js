@@ -17,7 +17,7 @@ updateCssTheme();
 setInterval(updateCssTheme, 60000);
 
 function navBarLinks() {
-    var x = document.getElementById("myLinks");
+    const x = document.getElementById("myLinks");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
@@ -33,7 +33,7 @@ function updateImage() {
         customImage.src = "media/hurricaneRidge.jpg";
     }
     else if (hour > 14 && hour <= 19) {
-        customImage.src = "media/tartooshSunset.jpg";
+        customImage.src = "media/smoky-mountain-sunset.jpg";
     }
     else {
         customImage.src = "media/rainierNightSky.jpeg";
