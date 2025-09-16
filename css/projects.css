@@ -1,0 +1,50 @@
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #f4f4f4;
+            background-color: #090f3e;
+        }
+
+/* Navigation menu */
+.topnav {
+    grid-area: navBar;
+    overflow: hidden;
+    background-color: #0d0024;
+    width: 100%;
+}
+
+.topnav #myLinks {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack links vertically */
+}
+
+.topnav a {
+    color: white;
+    padding: 0.8rem; /* Touch-friendly padding */
+    text-decoration: none;
+    font-size: 1rem; /* Readable for mobile */
+    display: block;
+    text-align: center;
+}
+
+.active {
+    background-color: #060023;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: 700;
+    color: whitesmoke;
+}
+
+.hiddenContent {
+    display: none;
+}
