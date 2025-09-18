@@ -1,4 +1,17 @@
 body {
+            display: grid; 
+            grid-template-areas: 
+            "navBar"
+            "personalProjects"
+            "commercialProjects"
+            "image"
+            "footer"
+            ;
+            grid-template-columns: auto;
+            grid-template-rows: auto 40vh 40vh 20vh auto;
+            justify-content: space-between;
+            align-content: center;
+
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -6,6 +19,8 @@ body {
             color: #f4f4f4;
             background-color: #090f3e;
         }
+
+
 
 /* Navigation menu */
 .topnav {
@@ -47,4 +62,21 @@ a:hover {
 
 .hiddenContent {
     display: none;
+}
+
+.projectsArticle > #personalProjects {
+    grid-area: personalProjects;
+}
+
+.projectsArticle > #commercialProjects {
+    grid-area: commercialProjects;
+}
+
+.image > #mainImage {
+    grid-area: image; 
+}
+
+
+.footer {
+    grid-area: footer;
 }
