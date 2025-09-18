@@ -2,13 +2,14 @@ body {
             display: grid; 
             grid-template-areas: 
             "navBar"
+            "header"
             "personalProjects"
             "commercialProjects"
             "image"
             "footer"
             ;
             grid-template-columns: auto;
-            grid-template-rows: auto 40vh 40vh 20vh auto;
+            grid-template-rows: auto auto 40vh 40vh 20vh auto;
             justify-content: space-between;
             align-content: center;
 
