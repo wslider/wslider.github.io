@@ -60,3 +60,20 @@ function customGreeting() {
 
 customGreeting();
 setInterval(customGreeting, 60000);
+
+function updateFooter() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const footerElement = document.querySelector('.footer'); // Get the first footer element
+    if (footerElement) {
+        {
+            footerElement.textContent = `William Slider - ${year}`; 
+        }
+        console.log('Year updated in footer');
+    } else {
+        console.error('Footer element not found');
+    }
+}
+
+updateFooter();
+setInterval(updateFooter, 24 * 60 * 60 * 1000); //update every 24 hours
