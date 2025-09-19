@@ -1,27 +1,27 @@
 body {
     display: grid;
     grid-template-areas: 
-        "header"
         "navBar"
+        "header"
         "main"
         "footer";
-    gap: 1rem; /* Reduced gap for mobile */
-    grid-template-rows: auto 25vh 1fr auto; /* Flexible rows for mobile */
+    gap: 1rem; 
+    grid-template-rows: min-content auto 1fr auto; 
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif; /* Mobile-friendly font */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif; 
     }
 
 header {
     grid-area: header;
-    font-size: 1.2rem; /* Smaller for mobile */
+    font-size: 1.2rem; 
     font-weight: 600;
     text-align: center;
-    padding: 1rem; /* Reduced padding */
-    border: 2px solid white; /* Thinner border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    padding: 1rem; 
+    border: 2px solid white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 main #mainContainer {
