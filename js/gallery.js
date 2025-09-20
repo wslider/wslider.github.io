@@ -34,7 +34,7 @@ function randomImage() {
     galleryImage.alt = selectedImage.alt;
     imageCaption.textContent = selectedImage.caption;
     galleryImage.style.opacity = 1;
-  }, 300);
+  }, 30);
 }
 
 // Add event listener for button click
