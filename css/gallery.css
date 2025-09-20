@@ -10,7 +10,7 @@ body {
   grid-template-rows: min-content 1fr 50vh 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
     gap:2%; 
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh; 
   margin: 0;
 }
 
