@@ -5,9 +5,10 @@ body {
     "header header header"
      "image image image"
     ". imageCaption . "
-     " . buttonDiv . "
+     " . randomButtonDiv . "
+     ". searchImageDiv ."
     "footer footer footer";
-  grid-template-rows: min-content 1fr 50vh 1fr 1fr 1fr;
+  grid-template-rows: min-content 1fr 50vh 1fr 1fr auto 1fr;
   grid-template-columns: 1fr 1fr 1fr;
     gap:2%; 
   min-height: 100vh; 
@@ -80,15 +81,25 @@ a:hover {
   justify-self: center;
 }
 
-#imageButton {
+.button , .labelText {
   font-size: 1rem;
   padding: 10px 20px;
   cursor: pointer;
 }
 
-.buttonDiv {
-    grid-area: buttonDiv;
+#randomButtonDiv {
+    grid-area: randomButtonDiv;
     justify-self: center;
+}
+
+#searchImageDiv {
+  grid-area:searchImageDiv;
+  justify-items: center;
+  justify-content: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
 }
 
 footer {

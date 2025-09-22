@@ -17,13 +17,23 @@
             <a href="gallery.html">Gallery</a>
         </div>
     </div>
+  <header>Gallery</header>
+  
+  <img id="galleryImage" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
+  <p id="imageCaption" aria-live="polite">A serene waterfall in the forest</p>
 
-    <header>Gallery</header>
-    
-        <img id="galleryImage" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
-        <p id="imageCaption" aria-live="polite">A serene waterfall in the forest</p>
-    
-    <div class="buttonDiv"><button id="imageButton">Change Image</button></div>
+  <div class="buttonDiv" id="randomButtonDiv">
+    <button class="button" id="imageButton">Random Image</button>
+  </div>
+
+  <div class="buttonDiv" id="searchImageDiv">
+    <form onsubmit="searchImages(event)">
+      <label class="labelText" for="searchImagesInput">Search Images</label>
+      <input id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
+      <button class="button" id="searchImagesButton" type="submit">Submit</button>
+    </form>
+  </div>
+
   <footer>William Slider © 2025 Random Gallery</footer>
   <script src="js/gallery.js"></script>
 </body>
