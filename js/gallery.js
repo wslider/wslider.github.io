@@ -14,6 +14,8 @@ const imageCaption = document.getElementById('imageCaption');
 const searchImagesButton = document.getElementById('searchImagesButton');
 const searchImagesInput = document.getElementById('searchImagesInput');
 
+
+            // create images.JSON later 
 const imageArray = [
   { src: 'media/lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' },
   { src: 'media/jennyFallLeaves.jpg', alt: 'Jenny Fall Leaves', caption: 'Autumn leaves and Jenny' },
@@ -21,7 +23,8 @@ const imageArray = [
   { src: 'media/tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' },
   { src: 'media/rainierNightSky.jpeg', alt: 'Night Sky and Mount Rainier', caption: 'Mount Rainier and Night Sky' },
   { src: 'media/eclipse-20240408.jpeg', alt: 'Image of 2025 Solar Eclipse in Totality', caption: '2024 April Solar Eclipse' },
-  { src: 'media/smoky-mountain-sunset.jpg', alt: 'Image of the Sunset from Clingmans Dome', caption: 'Smoky Mountain Sunset' }
+  { src: 'media/smoky-mountain-sunset.jpg', alt: 'Image of the Sunset from Clingmans Dome', caption: 'Smoky Mountain Sunset' },
+  { src: 'media/swiftcurrentlake-sunrise-mountain.jpeg', alt: 'Image of Swiftcurrent Lake in Glacier National Park', caption: 'Swiftcurrent Lake, Glacier NP'}
 ];
 
 // Function to set a random image, alt text, and caption
