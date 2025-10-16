@@ -63,16 +63,20 @@ a:hover {
 }
 
 .projectsArticle {
-    width: 100%; /* Full width on mobile */
+    width: 100%; 
     margin: 1rem 0;
-    padding: 0.5rem; /* Reduced padding for mobile */
-    background-color: rgba(0, 0, 0, 0.5); /* Subtle background */
-    text-align: center; /* Center text */
+    padding: 0.5rem; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    text-align: center; 
+    border-top: 3px solid white;
 }
 
 .item {
-border-top: solid white 2%;
-margin-top: 2%;
+box-sizing: border-box;
+width: 100%; 
+border: solid white 3px;
+margin-top: 2vh;
+text-align: center;
 }
 
 .image {
@@ -94,5 +98,20 @@ margin-top: 2%;
 }
 
 @media only screen and (min-width: 750px) {
+  .item {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
+  .item > .repoDes {
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 35%;
+    min-height: fit-content;
+  }
 }
