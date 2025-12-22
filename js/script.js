@@ -1,34 +1,13 @@
-function updateCssTheme() {
-    const now = new Date();
-    const hour = now.getHours();
-    linkElement = document.getElementById('customStyleSheet');
-    if (hour >= 6 && hour <= 14) {
-        linkElement.href = "css/daytime.css";
-    }
-    else if (hour > 14 && hour <= 19){
-        linkElement.href = "css/evening.css";
-    }
-    else {
-        linkElement.href = "css/night.css";
-    }
-}
+import { updateCssTheme } from "./utils.js";
+import { navBarLinks } from "./utils.js";
+import { updateFooter } from "./utils.js";
 
-updateCssTheme();
-setInterval(updateCssTheme, 60000);
 
-function navBarLinks() {
-    const x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
 
 function updateImage() {
     const now = new Date();
     const hour = now.getHours();
-    customImage = document.getElementById('mainImage');
+    const customImage = document.getElementById('mainImage');
     if (hour >= 6 && hour <= 14) {
         customImage.src = "media/hurricaneRidge.jpg";
     }
@@ -40,13 +19,10 @@ function updateImage() {
     }
 }
 
-updateImage();
-setInterval(updateImage, 60000);
-
 function customGreeting() {
     const now = new Date();
     const hour = now.getHours();
-    customGreeting = document.getElementById('customGreeting');
+    const customGreeting = document.getElementById('customGreeting');
     if (hour >= 6 && hour <= 14) {
         customGreeting.textContent = "Good Day To You";
     }
@@ -58,5 +34,36 @@ function customGreeting() {
     }
 }
 
-customGreeting();
-setInterval(customGreeting, 60000);
+document.getElementById('dropMenu').addEventListener('click', navBarLinks); 
+
+// Run when the DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        updateCssTheme();
+        setInterval(updateCssTheme, 60000);
+
+        updateImage();
+        setInterval(updateImage, 60000);
+
+        customGreeting();
+        setInterval(customGreeting, 60000);
+
+        updateFooter();
+        setInterval(updateFooter, 3600000); // 1 hour 
+    });
+} else {
+        
+        updateCssTheme();
+        setInterval(updateCssTheme, 60000);
+        customGreeting();
+        updateImage();
+        setInterval(updateImage, 60000);
+        setInterval(customGreeting, 60000);
+        updateFooter();
+        setInterval(updateFooter, 3600000);
+}
+
+
+
+

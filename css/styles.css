@@ -1,113 +1,177 @@
+     :root {
+      --sprucePine: #003a00; 
+      --kentuckyNight: #000d08;
+      --mountainFog: #f0fff8; 
+      --stormCloud: #333849;
+      --blueRidgeParkway: #002167;
+      --starLight: #e1ceff; 
+    }
+
 body {
-  display: grid;
-  grid-template-columns: repeat(3, auto); 
-  grid-template-rows: repeat(5,auto); 
-}
+        color: var(--mountainFog); 
+        font-family: Arial, Helvetica, sans-serif; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0; 
+    }
 
-header {
-  grid-column: 1 / span 3; 
-  grid-row: 1; 
-   font-size: 4rem;
-   font-weight: 600;
-   text-align: center;
-   padding: 3%; 
-}
+    /* Navigation menu */
+    .topnav {
+        grid-area: navBar;
+        overflow: hidden;
+        background-color: var(--kentuckyNight);
+        width: 100%;
+    }
 
-main {
-    grid-row: 3 / span 2; 
-    grid-column: 1 / span 3; 
-}
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            background-color: var(--stormCloud); 
+        }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 500; 
-}
+        .topnav a {
+            color: var(--mountainFog);
+            padding: 0.8rem; 
+            font-size: 1.5rem; 
+            display: block;
+            text-align: center;
+        }
 
-/* navigation menu */
-.topnav {
-  grid-row: 2;
-  grid-column: 1 / span 3; 
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
-}
+        .active {
+            background-color: var(--kentuckyNight);
+            font-weight: 600;
+            color: var(--mountainFog);
+        }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
+        a {
+            text-decoration: none;
+            color: var(--mountainFog);
+        }
 
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
+        a:hover {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--starLight);
+        }
 
-/* Add a grey background color on mouse-over */
-
-.active {
-  background-color: #003f17;
-  color: white;
-}
+        .hiddenContent {
+            display: none;
+        }
 
 
 
-a {
-  text-decoration: none;
-  color:whitesmoke;
-}
+    .header {
+        font-size: .9rem;
+        text-align: center;
+        cursor: pointer;
+        text-align: center;
+        width: 90%; 
+        margin-left: 5%;
+        margin-right: 5%;  
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        box-sizing: border-box; 
+        max-height: 20vh;
+        margin-bottom: 3vh;
+    }
+ 
 
-a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-  color: whitesmoke;
-}
+    .mainContainer {
+        margin-top: 10px; 
+        margin-bottom: 10px; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+    }
 
-.hiddenContent { 
-  display:none; 
-}
+    /* defaults for all containers within .maincontainer */
 
-img {
-    max-width:100%; 
-}
+    .container { 
+        box-sizing: border-box;
+        width: 97%; 
+        padding: 2%;
+        margin: 1%; 
+        padding: 2%;
+        border: solid var(--mountainFog) 3px; 
+        box-shadow: 3px 3px #001d08;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 
-.video {
-  max-width: auto;
-  max-height: 50vh;
-}
+    .containerTitle {
+        align-self: center;
+        text-align: center;
+    }
 
-footer {
-  grid-row: 5; 
-  grid-column: 1 / span 3; 
-}
+    .containerImg {
+        align-self: center;
+        width: 100%; 
+    }
 
-@media only screen and (max-width: 600px) {
-.video {
-  max-height: 50vh;
-  width: auto; 
-}
+    .footer {
+        margin: 25px; 
+        box-sizing: border-box;
+        text-align: center;
+      }
 
-}
+ @media only screen and (min-width: 768px) {
 
-@media only screen and (min-width: 600px) {
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 25px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .header {
+        max-height: 10vh; 
+        font-size: 0.9rem;
+        margin-bottom: 10vh; 
+    }
 
-.video {
-  max-width: 50vw;
-  max-height: auto;
-}
+     .topNav {
+        display: flex; 
+        flex-direction: row;
+        font-size: 1.25rem;
+    }
 
-}
+      .topnav > a {
+          text-align: left;
+      }
+    
+  
 
+    .mainContainer {
+        display: flex; 
+        flex-direction: row;
+    }
+
+      .container {
+          height: 60vh; 
+
+    }
+
+    
+  }
+
+    @media only screen and (min-width: 992px) {
+        .topnav {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+      }
+
+      .topnav #myLinks {
+          display: flex;
+          flex-direction: row;
+          background-color: transparent;
+      }
+
+      .topnav a {
+        margin-left: 5vw; 
+        margin-right: 7vw; 
+      }
+
+      #dropMenu {
+          display: none; 
+      }
+
+
+    }

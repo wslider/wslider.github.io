@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" id="customStyleSheet" href="css/evening.css"> 
     <title>Index</title>
 </head>
 <body>
-    <header class="heading">
+    <header class="header">
         <h1>William Slider</h1>
         <h3>Web Developer & Creator</h3>
     </header>
     
-    <div class="topnav" id="topNavBar">
-        <a class="active" onclick="navBarLinks()">Menu</a>
+    <nav class="topnav" id="topNavBar">
+        <a class="active" id="dropMenu"> ≡ Menu</a>
         <div id="myLinks">
             <a href="projects.html">Projects</a>
             <a href="resume.html">Resume</a>
             <a href="interests.html">Interests</a>
             <a href="gallery.html">Gallery</a>
         </div>
-    </div>
+    </nav>
 
-    <main class="main" id="mainContainer">
-        <section class="section" id="welcomeSection">
+    <main class="mainContainer">
+        <section class="container" id="welcomeSection">
             <h2>Welcome to My Official Website</h2>
             <ul>
                 <li><h3>It's all here .. in one place.</h3></li>
@@ -36,10 +36,10 @@
         </section>
         <section class="container" id="customImageContainer">
             <h2 id="customGreeting"></h2>
-            <img class="image" id="mainImage" src="media/smoky-mountain-sunset.jpg" alt="Smoky Mountain Sunset" caption="">
+            <img class="containerImg" id="mainImage" src="media/smoky-mountain-sunset.jpg" alt="Smoky Mountain Sunset" caption="">
         </section>
     </main>
-    <footer class="footer">William Slider - 2025</footer>
-    <script src="js/script.js"></script>
+    <footer class="footer" id="footer"></footer>
+    <script type="module"  src="js/script.js"></script>
 </body>
 </html>
