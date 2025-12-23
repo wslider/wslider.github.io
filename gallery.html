@@ -5,36 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Gallery</title>
   <link rel="stylesheet" href="css/gallery.css">
-  <link rel="stylesheet" href="" id="customStyleSheet">
+  <link rel="stylesheet" href="css/daytime.css" id="customStyleSheet">
 </head>
 <body>
-   <div class="topnav" id="topNavBar">
-        <a class="active" onclick="navBarLinks()">Menu</a>
-        <div id="myLinks">
-            <a href="projects.html">Projects</a>
-            <a href="resume.html">Resume</a>
-            <a href="interests.html">Interests</a>
-            <a href="gallery.html">Gallery</a>
-        </div>
+
+   
+
+  <nav class="topnav" id="topNavBar">
+          <a class="active" id="dropMenu"> ≡ Menu</a>
+          <div id="myLinks">
+              <a href="index.html">Home</a>
+              <a href="projects.html">Projects</a>
+              <a href="resume.html">Resume</a>
+              <a href="interests.html">Interests</a>
+          </div>
+    </nav>
+
+    <header class="header">
+      <h1>Gallery</h1>
+      <h3>Explore the Image Collection</h3>
+    </header>
+
+   <main class="mainContainer">
+
+    <figure class="container">
+      <img id="galleryImage" class="containerImg" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
+      <figcaption id="imageCaption" aria-live="polite">A serene waterfall in the forest</figcaption>
+    </figure>
+
+    <div class="buttonsContainer container">
+
+      <div class="buttonDiv" id="randomButtonDiv">
+        <button class="button" id="imageButton">Random Image</button>
+      </div>
+
+        <form onsubmit="searchImages(event)">
+          <label class="labelText" for="searchImagesInput">Search Images</label>
+          <input id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
+          <button class="button" id="searchImagesButton" type="submit">Submit</button>
+        </form>
+      
     </div>
-  <header>Gallery</header>
-  
-  <img id="galleryImage" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
-  <p id="imageCaption" aria-live="polite">A serene waterfall in the forest</p>
 
-  <div class="buttonDiv" id="randomButtonDiv">
-    <button class="button" id="imageButton">Random Image</button>
-  </div>
+  </main>
 
-  <div class="buttonDiv" id="searchImageDiv">
-    <form onsubmit="searchImages(event)">
-      <label class="labelText" for="searchImagesInput">Search Images</label>
-      <input id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
-      <button class="button" id="searchImagesButton" type="submit">Submit</button>
-    </form>
-  </div>
-
-  <footer>William Slider © 2025 Random Gallery</footer>
+  <footer class="footer" id="footer"></footer>
   <script type="module"  src="js/gallery.js"></script>
 </body>
 </html>

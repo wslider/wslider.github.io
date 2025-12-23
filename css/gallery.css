@@ -1,117 +1,156 @@
+     :root {
+      --sprucePine: #003a00; 
+      --kentuckyNight: #000d08;
+      --mountainFog: #f0fff8; 
+      --stormCloud: #333849;
+      --blueRidgeParkway: #002167;
+      --starLight: #e1ceff; 
+    }
+
 body {
-  display: grid;
-  grid-template-areas:
-    "navBar navBar navBar"
-    "header header header"
-     "image image image"
-    ". imageCaption . "
-     " . randomButtonDiv . "
-     ". searchImageDiv ."
-    "footer footer footer";
-  grid-template-rows: min-content 1fr 50vh 1fr 1fr auto 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-    gap:2%; 
-  min-height: 100vh; 
-  margin: 0;
-}
+        color: var(--mountainFog); 
+        font-family: Arial, Helvetica, sans-serif; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0; 
+    }
 
-header {
-  grid-area: header;
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 3%;
-}
+    /* Navigation menu */
+    .topnav {
+        grid-area: navBar;
+        overflow: hidden;
+        background-color: var(--kentuckyNight);
+        width: 100%;
+    }
 
-/* navigation menu */
-.topnav {
-    grid-area:navBar;
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
-}
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            background-color: var(--stormCloud); 
+        }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
+        .topnav a {
+            color: var(--mountainFog);
+            padding: 0.8rem; 
+            font-size: 1.5rem; 
+            display: block;
+            text-align: center;
+        }
 
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
+        .active {
+            background-color: var(--kentuckyNight);
+            font-weight: 600;
+            color: var(--mountainFog);
+        }
 
-/* Add a grey background color on mouse-over */
+        a {
+            text-decoration: none;
+            color: var(--mountainFog);
+        }
 
-.active {
-  background-color: #003f17;
-  color: white;
-}
+        a:hover {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--starLight);
+        }
 
-a {
-  text-decoration: none;
-  color:whitesmoke;
-}
+        .hiddenContent {
+            display: none;
+        }
 
-a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-  color: whitesmoke;
-}
 
-.hiddenContent { 
-  display:none; 
-}
 
-#galleryImage {
-  grid-area: image;
-  max-width: 500px;
-  max-height: 50vh;
-  align-self: center;
-  justify-self: center; 
-  object-fit: contain; /* Ensure image fits without distortion */
-}
+    .header {
+        font-size: .9rem;
+        text-align: center;
+        cursor: pointer;
+        text-align: center;
+        width: 90%; 
+        margin-left: 5%;
+        margin-right: 5%;  
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        box-sizing: border-box; 
+        max-height: 15vh;
+        margin-bottom: 3vh;
+    }
+ 
 
-#imageCaption {
-  grid-area: imageCaption;  
-  justify-self: center;
-}
+    .mainContainer {
+        margin-top: 10px; 
+        margin-bottom: 10px; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+    }
 
-.button , .labelText {
-  font-size: 1rem;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+    /* defaults for all containers within .maincontainer */
 
-#randomButtonDiv {
-    grid-area: randomButtonDiv;
-    justify-self: center;
-}
+    .container { 
+        box-sizing: border-box;
+        width: 97%; 
+        padding: 2%;
+        margin: 1%; 
+        padding: 2%;
+        border: solid var(--mountainFog) 3px; 
+        box-shadow: 3px 3px #001d08;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
 
-#searchImageDiv {
-  grid-area:searchImageDiv;
-  justify-items: center;
-  justify-content: center; 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: space-evenly;
-}
+    .containerTitle {
+        align-self: center;
+        text-align: center;
+    }
 
-footer {
-  grid-area: footer;
-  text-align: left;
-  color: white;
-  font-size: 0.5rem;
-  padding: 1%;
-}
+    .containerImg {
+        align-self: center;
+        max-height: 55vh;
+        max-width: 100%;
+    }
 
-@media screen and (min-width: 700px) {
+    .footer {
+        margin: 25px; 
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+ @media only screen and (min-width: 600px) {
+    
+   .topNav {
+        display: flex; 
+        flex-direction: row;
+        font-size: 1.25rem;
+    }
+
+      .topnav > a {
+          text-align: left;
+      }
+
+    .mainContainer {
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 75vh; 
+    }
+
+    .container {
+      height: 100%; 
+    }
+
+    .containerImg {
+      max-height: 90%; 
+    }
+
+    .mainContainer > .buttonsContainer {
+         flex-direction: column;
+         justify-content: space-evenly;
+         align-items: center;
+         width: 25%; 
+    }
   
-
-
-}
+ }

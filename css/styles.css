@@ -144,8 +144,13 @@ body {
     }
 
       .container {
-          height: 60vh; 
+          height: 70vh; 
 
+    }
+
+    .containerImg {
+        align-self: center;
+        width: 90%; 
     }
 
     
