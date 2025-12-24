@@ -1,4 +1,15 @@
-body {
+ :root {
+      --sprucePine: #003a00; 
+      --kentuckyNight: #000d08;
+      --mountainFog: #f0fff8; 
+      --stormCloud: #333849;
+      --blueRidgeParkway: #002167;
+      --starLight: #e1ceff; 
+    }
+
+
+
+    body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -6,6 +17,51 @@ body {
             color: #f4f4f4;
             background-color: #232533;
         }
+
+         /* Navigation menu */
+    .topnav {
+        grid-area: navBar;
+        overflow: hidden;
+        background-color: var(--kentuckyNight);
+        width: 100%;
+    }
+
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            background-color: var(--stormCloud); 
+        }
+
+        .topnav a {
+            color: var(--mountainFog);
+            padding: 0.8rem; 
+            font-size: 1.5rem; 
+            display: block;
+            text-align: center;
+        }
+
+        .active {
+            background-color: var(--kentuckyNight);
+            font-weight: 600;
+            color: var(--mountainFog);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--mountainFog);
+        }
+
+        a:hover {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--starLight);
+        }
+
+        .hiddenContent {
+            display: none;
+        }
+
+
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -14,9 +70,10 @@ body {
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h1,
-        h2, h3 {
-        color: whitesmoke;         }
+
+        h1,h2, h3 { 
+            color: whitesmoke;
+        }
         .header {
             text-align: center;
         }
@@ -62,24 +119,47 @@ body {
             margin: 5px 5px 5px 0;
             border-radius: 4px;
         }
-        /* navigation menu */
-        
+
+        .footer {
+        margin: 25px; 
+        box-sizing: border-box;
+        text-align: center;
+         }
+
+
+@media only screen and (min-width: 768px) {
+    .topNav {
+        display: flex; 
+        flex-direction: row;
+        font-size: 1.25rem;
+    }
+
+      .topnav > a {
+          text-align: left;
+      }
+}
+
+@media only screen and (min-width: 992px) {
         .topnav {
-        overflow: hidden;
-        background-color: #010007;
-        position: relative;
-        }
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+      }
 
-        /* Hide the links inside the navigation menu (except for logo/home) */
-        .topnav #myLinks {
-        display: none;
-        }
+      .topnav #myLinks {
+          display: flex;
+          flex-direction: row;
+          background-color: transparent;
+      }
 
-        /* Style navigation menu links */
-        .topnav a {
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-        }
+      .topnav a {
+        margin-left: 5vw; 
+        margin-right: 7vw; 
+      }
+
+      #dropMenu {
+          display: none; 
+      }
+
+
+    }
