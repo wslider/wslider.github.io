@@ -4,7 +4,7 @@
 const container = document.getElementById('myProjects');
 
 // Fetch GitHub repos & sort by last update
-async function getUserRepos(ghUserName) {
+export async function getUserRepos(ghUserName) {
  try {
  const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
  if (!result.ok) {
@@ -25,8 +25,7 @@ function displayRepos(repos) {
  container.innerHTML = '<p>No repositories found.</p>';
  return;
  }
- container.innerHTML = repos
- .map(repo => `
+ container.innerHTML = repos.slice(0, 5).map(repo => `
  <div class="item">
     <h3>${repo.name}</h3>
     <a href="${repo.html_url}" target="_blank">View GitHub Repository</a>
