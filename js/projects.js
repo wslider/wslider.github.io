@@ -1,10 +1,13 @@
-// script.js module variables (for later)
+import { navBarLinks } from "/js/utils.js"; 
+import { updateFooter } from "/js/utils.js";
+
 // global vaiables
 
 const container = document.getElementById('myProjects');
 
+
 // Fetch GitHub repos & sort by last update
-export async function getUserRepos(ghUserName) {
+async function getUserRepos(ghUserName) {
  try {
  const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
  if (!result.ok) {
@@ -25,7 +28,8 @@ function displayRepos(repos) {
  container.innerHTML = '<p>No repositories found.</p>';
  return;
  }
- container.innerHTML = repos.slice(0, 5).map(repo => `
+ container.innerHTML = repos.slice(0, 5) // Top 5 most recently updated
+ .map(repo => `
  <div class="item">
     <h3>${repo.name}</h3>
     <a href="${repo.html_url}" target="_blank">View GitHub Repository</a>
@@ -39,3 +43,11 @@ function displayRepos(repos) {
 // Initial fetch and update every hour
 getUserRepos('wslider');
 setInterval(() => getUserRepos('wslider'), 3600000);
+
+
+document.getElementById('dropMenu').addEventListener('click', navBarLinks);
+navBarLinks();
+
+updateFooter();
+
+    
