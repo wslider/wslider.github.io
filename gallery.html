@@ -22,12 +22,11 @@
 
     <header class="header">
       <h1>Gallery</h1>
-      <h3>Explore the Image Collection</h3>
     </header>
 
    <main class="mainContainer">
 
-    <figure class="container">
+    <figure class="imageContainer container">
       <img id="galleryImage" class="containerImg" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
       <figcaption id="imageCaption" aria-live="polite">A serene waterfall in the forest</figcaption>
     </figure>
@@ -39,9 +38,8 @@
       </div>
 
         <form onsubmit="searchImages(event)">
-          <label class="labelText" for="searchImagesInput">Search Images</label>
-          <input id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
-          <button class="button" id="searchImagesButton" type="submit">Submit</button>
+          <input class="textInput" id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
+          <button class="button" id="searchImagesButton" type="submit">Search</button>
         </form>
       
     </div>

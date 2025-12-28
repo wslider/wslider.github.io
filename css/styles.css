@@ -7,9 +7,14 @@
       --starLight: #e1ceff; 
     }
 
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 body {
         color: var(--mountainFog); 
-        font-family: Arial, Helvetica, sans-serif; 
         display: flex; 
         flex-direction: column;
         justify-content: space-between;
@@ -101,6 +106,7 @@ body {
         flex-direction: column;
         gap: 5px;
     }
+
 
     .containerTitle {
         align-self: center;
