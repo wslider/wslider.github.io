@@ -18,7 +18,7 @@
             background-color: #232533;
         }
 
-         /* Navigation menu */
+   /* Navigation menu */
     .topnav {
         grid-area: navBar;
         overflow: hidden;
@@ -61,11 +61,9 @@
             display: none;
         }
 
-
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            padding: 25px;
             background-color: #010b55;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -78,10 +76,10 @@
             text-align: center;
         }
         .header h1 {
-            margin: 10px 0;
+            padding: 10px;
         }
         .contact {
-            margin: 10px 0;
+            margin: 10px;
             font-size: 14px;
         }
         .contact a {
