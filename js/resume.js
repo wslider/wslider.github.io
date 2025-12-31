@@ -5,7 +5,6 @@ import { updateFooter } from '/js/utils.js';
 
 
 document.getElementById('dropMenu').addEventListener('click', navBarLinks); 
-navBarLinks();
 
 
 // Run when the DOM is ready
