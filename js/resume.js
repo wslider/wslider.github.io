@@ -3,8 +3,10 @@ import { updateFooter } from '/js/utils.js';
 
 
 const projectsContainer = document.getElementById('myProjects');
-const selectedProjects = ['malayalam-explorer-website', 'malayalam-explorer', 'detour365']; 
+const selectedProjects = ['malayalam-explorer-website', 'malayalam-explorer', 'wslider.github.io']; 
+//add more project names as needed
 
+// Fetch GitHub repos & sort by last update
 async function getUserRepos(ghUserName) {
     try {
         const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
