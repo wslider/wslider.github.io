@@ -3,5 +3,7 @@ body {background-color: #222d7d;
 
 }
 
-.active {
-  background-color: #00023f; }
+
+.mainContainer > .container {
+    background-color: #171a61d0;
+  }

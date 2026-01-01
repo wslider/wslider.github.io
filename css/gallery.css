@@ -131,6 +131,18 @@ body {
       }
 
  @media only screen and (min-width: 700px) {
+    .topNav {
+        display: flex; 
+        flex-direction: row;
+        font-size: 1.25rem;
+    }
+
+      .topnav > a {
+          text-align: left;
+      }
+    }
+ 
+ /*{
     
   .header {
         display: block;
@@ -146,15 +158,7 @@ body {
         height: 9h;
   }
 
-   .topNav {
-        display: flex; 
-        flex-direction: row;
-        font-size: 1.25rem;
-    }
 
-      .topnav > a {
-          text-align: left;
-      }
 
     .mainContainer {
       flex-direction: row;
@@ -175,4 +179,6 @@ body {
          width: 25%; 
     }
   
- }
+ } */
+
+   

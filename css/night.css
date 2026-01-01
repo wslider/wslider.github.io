@@ -5,3 +5,7 @@ body {background-color: #070031;
 
 .active {
   background-color: black;}
+
+.mainContainer > .container {
+    background-color: #141431d0;
+  }

@@ -99,13 +99,15 @@
         }
         .item {
             margin-bottom: 15px;
+            padding: 10px;
+            background-color: #001d2f;
         }
         .item h3 {
-            margin: 0;
+            margin-bottom: 5px;
             font-size: 18px;
                     }
         .item p {
-            margin: 5px 0;
+            margin: 5px;
             font-size: 14px;
         }
         .skills ul {

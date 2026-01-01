@@ -3,7 +3,7 @@ import { updateFooter } from '/js/utils.js';
 
 
 const projectsContainer = document.getElementById('myProjects');
-const selectedProjects = ['wslider.github.io', 'malayalam-explorer', 'detour365']; 
+const selectedProjects = ['malayalam-explorer-website', 'malayalam-explorer', 'detour365']; 
 
 async function getUserRepos(ghUserName) {
     try {
@@ -28,9 +28,14 @@ function displayRepos(filteredRepos) {
         return;
     }
     projectsContainer.innerHTML = filteredRepos.map(repo => `
-        <div class="item">
+        <div class="item projectItem">
             <h3>${repo.name}</h3>
-            <a href="${repo.html_url}" target="_blank">View GitHub Repository</a>
+            <div>
+                <a href=${repo.homepage || repo.html_url} target="_blank">Visit Project Website</a>
+            </div>
+            <div>
+                <a href="${repo.html_url}" target="_blank">View GitHub Repository</a>
+            </div>
             <p class="repoDes">"${repo.description || 'Nothing to see here'}"</p>
             <p>Updated: ${repo.updated_at}</p>
         </div>
