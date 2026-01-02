@@ -32,22 +32,22 @@ const getGreeting = (hour24) => {
   switch (true) {
     case (hour24 >= 5 && hour24 < 12):
       return { 
-        english: "Good Morning", 
+        english: "Good Morning & Welcome", 
         malayalam: "സുപ്രഭാതം",
       };
     case (hour24 >= 12 && hour24 < 17):
       return { 
-        english: "Good Afternoon", 
+        english: "Good Afternoon & Welcome", 
         malayalam: "ശുഭാന്തരം",
       };
     case (hour24 >= 17 && hour24 < 22):
       return { 
-        english: "Good Evening", 
+        english: "Good Evening & Welcome", 
         malayalam: "ശുഭ സന്ധ്യ",
       };
     case (hour24 >= 22 || hour24 < 5):
       return { 
-        english: "Good Night", 
+        english: "Good Night & Welcome", 
         malayalam: "ശുഭരാത്രി",
       };
     default:
