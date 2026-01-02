@@ -58,7 +58,7 @@ const getGreeting = (hour24) => {
 };
 
 const createGreetingStr = ( year, month, day, hour, minsPadded, amPm, timezoneLabel) => {
-   return `It is ${year} ${month} ${day} at ${hour}:${minsPadded} ${amPm}. ${timezoneLabel}`;
+   return `${year} ${month} ${day}  ${hour}:${minsPadded} ${amPm}. ${timezoneLabel}`;
   }
 
 function updateLocalTimeGreeting() {

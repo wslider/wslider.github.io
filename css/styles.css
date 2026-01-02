@@ -78,7 +78,7 @@ body {
         padding-bottom: 10px; 
         box-sizing: border-box; 
         max-height: 20vh;
-        margin-bottom: 3vh;
+        margin-bottom: 1vh;
     }
  
 
@@ -128,7 +128,7 @@ body {
 
     .header {
         max-height: 10vh; 
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         margin-bottom: 10vh; 
     }
 
@@ -163,6 +163,10 @@ body {
   }
 
     @media only screen and (min-width: 992px) {
+
+    .header {
+        font-size: 1.3rem; 
+    }
         .topnav {
           display: flex;
           flex-direction: row;
