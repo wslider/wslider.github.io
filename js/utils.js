@@ -93,13 +93,3 @@ export function updateFooter() {
     footer.textContent = `William Slider - ${footerMonth} ${footerYear}`;
 }
 
-// Run when the DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        updateFooter();
-        setInterval(updateFooter, 3600000); // 1 hour 
-    });
-} else {
-    updateFooter();
-    setInterval(updateFooter, 36000000);
-}

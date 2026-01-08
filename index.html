@@ -6,6 +6,7 @@
     <meta name="description" content="Welcome to the personal website of William Slider, a Front End and Full Stack Web Developer. Explore projects, resume, gallery, and more.">
     <meta name="keywords" content="William Slider, Web Developer, Front End Developer, Full Stack Developer, Portfolio, Resume, Projects, Gallery, Blog">
     <meta name="author" content="William Slider">
+    <meta copyright="© 2026 William Slider">
     <meta name="robots" content="index, follow">
     <title>William Slider - Web Developer Portfolio</title>
 
@@ -57,15 +58,40 @@
                 <li><a href="projects.html"><h3>Check Out Current and Past Web Development Projects</h3></a></li>
                 <li><a href="resume.html"><h3>View My Resume</h3></a></li>
                 <li><a href="blog.html"><h3>Checkout The Blog ... coming soon</h3></a></li>
-                <li><a href="gallery.html"><h3>Browse The Photo Gallery</h3></a></li>
                 <li><a href="about.html"><h3>More About Me - and what I do</h3></a></li>
                 <li><a href="contact.html"><h3>Contact Me</h3></a></li>
             </ul>
         </section>
+
         <section class="container" id="customImageContainer">
             <h2 id="localTimeGreeting"></h2>
             <img class="containerImg" id="mainImage" src="media/smoky-mountain-sunset.jpg" alt="Smoky Mountain Sunset" caption="">
         </section>
+
+        <section class="container" id="galleryContainer">
+            <h2>Image Gallery</h2>
+            <figure class="imageContainer container">
+                <img id="galleryImage" class="containerImg" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
+                <figcaption id="imageCaption" aria-live="polite">A serene waterfall in the forest</figcaption>
+            </figure>
+
+            <div class="buttonsContainer container">
+                <div class="buttonDiv" id="randomButtonDiv">
+                    <button class="button" id="imageButton">Random Image</button>
+                </div>
+                <form onsubmit="searchImages(event)">
+                    <input class="textInput" id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
+                    <button class="button" id="searchImagesButton" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="container" id="latestBlogPosts">
+            <h2>Latest Blog Post</h2>
+            <p>Coming Soon ...</p>
+            <p>for full list - see blog page</p>
+        </section>
+
     </main>
     <footer class="footer" id="footer"></footer>
     <script type="module"  src="js/script.js"></script>
