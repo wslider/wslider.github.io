@@ -1,6 +1,14 @@
-body {background-color: #222d7d;
-    color:#ffffffdf;
 
+
+.body {
+  background-image: url('/media/smoky-mountain-sunset.jpg'); 
+  background-size: cover;           
+  background-position: center;      
+  background-repeat: no-repeat;     
+  background-attachment: fixed;     
+  min-height: 100vh;     
+  background-color: #222d7d;
+    color:#ffffffdf;           
 }
 
 

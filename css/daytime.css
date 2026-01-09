@@ -1,6 +1,14 @@
-body {background-color: #015e01;
-    color:#ffffffdf;
+
     
+
+.body {background-color: #015e01;
+    color:#ffffffdf;
+  background-image: url('/media/hurricaneRidge.jpg'); 
+  background-size: cover;           
+  background-position: center;      
+  background-repeat: no-repeat;     
+  background-attachment: fixed;     
+  min-height: 100vh;              
 }
 
 .mainContainer > .container {

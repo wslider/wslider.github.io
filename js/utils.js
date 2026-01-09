@@ -6,15 +6,15 @@ export function updateCssTheme() {
     const customImage = document.getElementById('mainImage');
     if (hour >= 6 && hour <= 14) {
         linkElement.href = "css/daytime.css";
-        customImage.src = "media/hurricaneRidge.jpg";
+        
     }
     else if (hour > 14 && hour <= 19){
         linkElement.href = "css/evening.css";
-        customImage.src = "media/smoky-mountain-sunset.jpg";
+        
     }
     else {
         linkElement.href = "css/night.css";
-        customImage.src = "media/rainierNightSky.jpeg";
+        
     }
 }
 

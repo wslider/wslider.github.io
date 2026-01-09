@@ -108,6 +108,9 @@
         gap: 5px;
     }
 
+    .imageContainer {
+        max-height: 95%
+    }
 
     .containerTitle {
         align-self: center;
@@ -116,7 +119,8 @@
 
     .containerImg {
         align-self: center;
-        width: 100%; 
+        max-height: 30vh;
+        width: auto;
     }
 
     .buttonsContainer {
@@ -155,37 +159,18 @@
 
  @media only screen and (min-width: 768px) {
 
-    .header {
-        max-height: 10vh; 
-        font-size: 1.1rem;
-        margin-bottom: 10vh; 
-    }
 
-     .topNav {
-        display: flex; 
-        flex-direction: row;
-        font-size: 1.25rem;
-    }
-
-      .topnav > a {
-          text-align: left;
-      }
-    
-  
 
     .mainContainer {
         display: flex; 
         flex-direction: row;
     }
 
-      .container {
-          height: 70vh; 
-
-    }
+    
 
     .containerImg {
         align-self: center;
-        width: 90%; 
+        
     }
 
     
@@ -207,6 +192,11 @@
     .header {
         font-size: 1.3rem; 
         grid-area: header;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 70vh;
+        
     }
         .topnav {
           display: flex;
