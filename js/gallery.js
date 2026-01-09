@@ -1,6 +1,3 @@
-import { navBarLinks } from "./utils.js";
-import { updateFooter } from "./utils.js";
-
 // Select DOM elements
 const galleryImage = document.getElementById('galleryImage');
 const imageButton = document.getElementById('imageButton');
@@ -81,20 +78,7 @@ imageButton.addEventListener('click', randomImage);
 
 searchImagesButton.addEventListener('click', searchImages);
 
-document.getElementById('dropMenu').addEventListener('click', navBarLinks); 
 
-// Run when the DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-
-        updateFooter();
-        setInterval(updateFooter, 3600000); // 1 hour 
-    });
-} else {
-
-        updateFooter();
-        setInterval(updateFooter, 3600000);
-}
 
 
 /*async function loadImageArray() {

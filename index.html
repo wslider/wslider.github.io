@@ -32,7 +32,7 @@
     <link rel="stylesheet" id="customStyleSheet" href="css/evening.css"> 
     
 </head>
-<body>
+<body class="body">
 
     <nav class="topnav" id="topNavBar">
      <a class="active" id="dropMenu"> ≡ Menu</a>
@@ -47,22 +47,11 @@
 
     <header class="header">
         <h1>William Slider</h1>
-        <h3><i>Web Development ... Front End and Full Stack</i></h3>
+        <h2><i>Web Development ... Front End and Full Stack</i></h2>
     </header>
     
     <main class="mainContainer">
-        <section class="container" id="welcomeSection">
-            <h2 id="customGreeting">Welcome!</h2>
-            <h3>Explore My Website</h3>
-            <ul>
-                <li><a href="projects.html"><h3>Check Out Current and Past Web Development Projects</h3></a></li>
-                <li><a href="resume.html"><h3>View My Resume</h3></a></li>
-                <li><a href="blog.html"><h3>Checkout The Blog ... coming soon</h3></a></li>
-                <li><a href="about.html"><h3>More About Me - and what I do</h3></a></li>
-                <li><a href="contact.html"><h3>Contact Me</h3></a></li>
-            </ul>
-        </section>
-
+        
         <section class="container" id="customImageContainer">
             <h2 id="localTimeGreeting"></h2>
             <img class="containerImg" id="mainImage" src="media/smoky-mountain-sunset.jpg" alt="Smoky Mountain Sunset" caption="">
@@ -70,19 +59,20 @@
 
         <section class="container" id="galleryContainer">
             <h2>Image Gallery</h2>
-            <figure class="imageContainer container">
+            <figure class="imageContainer">
                 <img id="galleryImage" class="containerImg" src="media/lushWaterfall.jpeg" alt="Lush Waterfall">
                 <figcaption id="imageCaption" aria-live="polite">A serene waterfall in the forest</figcaption>
             </figure>
 
-            <div class="buttonsContainer container">
-                <div class="buttonDiv" id="randomButtonDiv">
-                    <button class="button" id="imageButton">Random Image</button>
-                </div>
-                <form onsubmit="searchImages(event)">
+            <div class="buttonsContainer">
+
+                <form onsubmit="searchImages(event)" class="searchForm" id="searchImagesForm">
                     <input class="textInput" id="searchImagesInput" name="searchImagesInput" type="text" placeholder='type a search term like "waterfall"'>
                     <button class="button" id="searchImagesButton" type="submit">Search</button>
                 </form>
+                
+                <button class="button imageButton" id="imageButton">Random Image</button>
+                
             </div>
         </section>
 
@@ -95,5 +85,6 @@
     </main>
     <footer class="footer" id="footer"></footer>
     <script type="module"  src="js/script.js"></script>
+    <script type="module"  src="js/gallery.js"></script>
 </body>
 </html>
