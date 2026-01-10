@@ -27,10 +27,10 @@
 
     /* Navigation menu */
     .topnav {
-        grid-area: navBar;
         overflow: hidden;
         background-color: var(--kentuckyNight);
         width: 100%;
+        min-height: 8vh;
     }
 
         .topnav #myLinks {
@@ -41,7 +41,7 @@
 
         .topnav a {
             color: var(--mountainFog);
-            padding: 0.8rem; 
+            padding: 1rem; 
             font-size: 1.5rem; 
             display: block;
             text-align: center;
@@ -71,7 +71,7 @@
 
 
     .header {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -196,7 +196,7 @@
       }
     
     .header {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         height: 30vh;
     }
   
@@ -216,29 +216,4 @@
 
     
 }
-    @media only screen and (min-width: 992px) {
-
     
-        .topnav {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          grid-area: navBar;
-      }
-
-      .topnav #myLinks {
-          display: flex;
-          flex-direction: row;
-          background-color: transparent;
-      }
-
-      .topnav a {
-        margin-left: 5vw;
-      }
-
-      #dropMenu {
-          display: none; 
-      }
-
-      
-    }
