@@ -11,6 +11,15 @@
   min-height: 100vh;              
 }
 
+.header {
+    background-color: #00000055;
+    width: 100%;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px #000000;
+}
+
 .mainContainer > .container {
     background-color: #044804d0;
 }
