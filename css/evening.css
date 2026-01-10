@@ -5,12 +5,16 @@
   background-size: cover;           
   background-position: center;      
   background-repeat: no-repeat;     
-  background-attachment: fixed;     
-     
+  background-attachment: fixed;        
   background-color: #222d7d;
     color:#ffffffdf;           
 }
 
+
+.header > h2 {
+    color: #090039f4;
+    text-shadow: none;
+}
 
 .mainContainer > .container {
     background-color: #171a61d0;
