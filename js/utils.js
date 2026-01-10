@@ -4,14 +4,11 @@ export function updateCssTheme() {
     const hour = now.getHours();
     const linkElement = document.getElementById('customStyleSheet');
     const customImage = document.getElementById('mainImage');
-    if (hour >= 6 && hour <= 14) {
-        linkElement.href = "css/daytime.css";
-        
-    }
-    else if (hour > 14 && hour <= 19){
+    if (hour >= 6 && hour <= 18) {
         linkElement.href = "css/evening.css";
         
     }
+
     else {
         linkElement.href = "css/night.css";
         

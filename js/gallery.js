@@ -11,7 +11,7 @@ const customStyleSheet = document.getElementById('customStyleSheet');
 //fetch from images.JSON later
 
 const imageArray = [
-  { src: 'media/lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' , cssTheme:'css/daytime.css'},
+  { src: 'media/lushWaterfall.jpeg', alt: 'Lush Waterfall', caption: 'A serene waterfall in the forest' , cssTheme:'css/evening.css'},
   { src: 'media/jennyFallLeaves.jpg', alt: 'Jenny Fall Leaves', caption: 'Autumn leaves and Jenny' , cssTheme:'css/night.css'},
   { src: 'media/hurricaneRidge.jpg', alt: 'Hurricane Ridge', caption: 'Snowy peaks at Hurricane Ridge, Olympic NP' , cssTheme:'css/evening.css'},
   { src: 'media/tartooshSunset.jpg', alt: 'Tartoosh Sunset', caption: 'Sunset over Tartoosh Mountains' , cssTheme:'css/evening.css'},
