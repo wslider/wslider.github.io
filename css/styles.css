@@ -10,6 +10,8 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -69,8 +71,12 @@
 
 
     .header {
-        font-size: .9rem;
+        font-size: 1.1rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
         cursor: pointer;
         text-align: center;
         width: 90%; 
@@ -79,8 +85,9 @@
         padding-top: 10px;
         padding-bottom: 10px; 
         box-sizing: border-box; 
-        height: 40vh;
+        height: 35vh;
         margin-bottom: 1vh;
+        text-shadow: #000d08 2px 2px 4px;
     }
  
 
@@ -113,7 +120,13 @@
     }
 
     .imageContainer {
-        max-height: 95%
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .containerTitle {
@@ -154,6 +167,13 @@
         text-align: center;
         padding: 10px;
         margin: 10px;
+    }
+
+    .localTime {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 10px;
+        text-align: center;
     }
 
     .footer {
