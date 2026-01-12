@@ -27,6 +27,7 @@
 
     /* Navigation menu */
     .topnav {
+        flex-direction: column;
         overflow: hidden;
         background-color: var(--kentuckyNight);
         width: 100%;
@@ -71,7 +72,7 @@
 
 
     .header {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -79,13 +80,11 @@
         align-items: center;
         cursor: pointer;
         text-align: center;
-        width: 90%; 
-        margin-left: 5%;
-        margin-right: 5%;  
+        width: 100%;   
         padding-top: 10px;
         padding-bottom: 10px; 
         box-sizing: border-box; 
-        height: 35vh;
+        height: 40vh;
         margin-bottom: 1vh;
         text-shadow: #000d08 2px 2px 4px;
     }
@@ -182,35 +181,88 @@
         text-align: center;
       }
 
-/* Mobile landscape / very small tablets */
-    @media (min-width: 576px) and (orientation: landscape) {
+@media only screen and (min-width: 500px) and (orientation: landscape) {
 
-
-    .topnav {
-        display: flex; 
+     .topnav {
         flex-direction: row;
-        font-size: 1.25rem;
+        justify-content: flex-start;
+        gap: 3vw;
+        font-size: 1.1rem;
     }
+
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: row;
+            justify-content: flex-start;
+            background-color: var(--stormCloud); 
+            gap: 2vw;
+        }
 
       .topnav > a {
           text-align: left;
       }
 
-     .header {
-      font-size: 1.2rem;
-      height: 80vh;
+    .header {
+        font-size: 1.2rem;
+        height: 80vh;
+    }
+
+}
+
+    
+     .topnav {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 5vw;
+        font-size: 1.5rem;
+    }
+
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-color: var(--stormCloud); 
+            gap: 5vw;
         }
 
+      .topnav > a {
+          text-align: left;
+      }
+
+    .header {
+        font-size: 1rem;
+        height: 25vh;
+    }
+
+    .mainContainer {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .containerImg {
+        max-width: 80vw;
+        width: auto;
     }
 
  @media only screen and (min-width: 768px) {
 
     
      .topnav {
-        display: flex; 
         flex-direction: row;
+        justify-content: flex-start;
+        gap: 2vw;
         font-size: 1.25rem;
+        padding: 0 3vw 0 -1vw;
     }
+
+        .topnav #myLinks {
+            display: none; /* Hidden by default */
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-color: var(--stormCloud); 
+            gap: 2vw;
+        }
 
       .topnav > a {
           text-align: left;
