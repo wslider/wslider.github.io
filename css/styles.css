@@ -181,13 +181,13 @@
         text-align: center;
       }
 
-@media only screen and (min-width: 500px) and (orientation: landscape) {
+@media (min-width: 500px) and (orientation: landscape) {
 
      .topnav {
         flex-direction: row;
         justify-content: flex-start;
         gap: 3vw;
-        font-size: 1.1rem;
+        font-size: .9rem;
     }
 
         .topnav #myLinks {
@@ -200,50 +200,28 @@
 
       .topnav > a {
           text-align: left;
+          font-size: 1.1rem;
       }
+
+      .topnav #myLinks > a {
+          font-size: 1.1rem;
+      }
+
+
 
     .header {
         font-size: 1.2rem;
         height: 80vh;
     }
 
+    .container {
+        height: 100vh;}
+
+    .galleryContainer > h2 {
+        display: none;
+    }
+
 }
-
-    
-     .topnav {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 5vw;
-        font-size: 1.5rem;
-    }
-
-        .topnav #myLinks {
-            display: none; /* Hidden by default */
-            flex-direction: row;
-            justify-content: space-evenly;
-            background-color: var(--stormCloud); 
-            gap: 5vw;
-        }
-
-      .topnav > a {
-          text-align: left;
-      }
-
-    .header {
-        font-size: 1rem;
-        height: 25vh;
-    }
-
-    .mainContainer {
-        display: flex; 
-        flex-direction: column;
-        align-items: center; 
-    }
-
-    .containerImg {
-        max-width: 80vw;
-        width: auto;
-    }
 
  @media only screen and (min-width: 768px) {
 
