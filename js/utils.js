@@ -23,7 +23,24 @@ export function navBarLinks() {
 
     if (currentDisplay === "block" || currentDisplay === "flex") {
         myLinks.style.display = "none";
-    } else if (window.innerWidth < 768) {
+    } 
+    else if (window.innerWidth < 768 && screen.orientation === "portrait") {
+        myLinks.style.display = "flex";
+        myLinks.style.flexDirection = "column";
+        topNavBar.style.display = "flex";
+        topNavBar.style.flexDirection = "column";
+    }
+    else if (window.innerWidth <768 && screen.orientation === "landscape") {
+        myLinks.style.display = "flex";
+        myLinks.style.flexDirection = "row";
+        myLinks.style.justifyContent = "flex-start"
+        myLinks.style.gap = "2vw"
+        topNavBar.style.display = "flex"; 
+        topNavBar.style.flexDirection = "row"; 
+        topNavBar.style.justifyContent = "flex-start";
+        topNavBar.style.gap = "5vw"; 
+    }
+     else if (window.innerWidth < 768 && screen.orientation === "portrait") {
         myLinks.style.display = "flex";
         myLinks.style.flexDirection = "column";
         topNavBar.style.display = "flex";

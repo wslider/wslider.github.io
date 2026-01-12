@@ -182,10 +182,31 @@
         text-align: center;
       }
 
+/* Mobile landscape / very small tablets */
+    @media (min-width: 576px) and (orientation: landscape) {
+
+
+    .topnav {
+        display: flex; 
+        flex-direction: row;
+        font-size: 1.25rem;
+    }
+
+      .topnav > a {
+          text-align: left;
+      }
+
+     .header {
+      font-size: 1.2rem;
+      height: 80vh;
+        }
+
+    }
+
  @media only screen and (min-width: 768px) {
 
     
-     .topNav {
+     .topnav {
         display: flex; 
         flex-direction: row;
         font-size: 1.25rem;
@@ -217,3 +238,20 @@
     
 }
     
+
+
+/*     } else if (window.innerWidth < 768) {
+        myLinks.style.display = "flex";
+        myLinks.style.flexDirection = "column";
+        topNavBar.style.display = "flex";
+        topNavBar.style.flexDirection = "column"; 
+    } else {
+        myLinks.style.display = "flex";
+        myLinks.style.flexDirection = "row";
+        myLinks.style.justifyContent = "space-evenly"
+        myLinks.style.gap = "2vw"
+        topNavBar.style.display = "flex"; 
+        topNavBar.style.flexDirection = "row"; 
+        topNavBar.style.justifyContent = "flex-start";
+        topNavBar.style.gap = "5vw"; 
+        topNavBar.style.padding = "0 3vw 0 -1vw"; */ 
