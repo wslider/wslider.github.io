@@ -211,6 +211,10 @@
 
 @media (min-width: 500px) and (orientation: landscape) {
 
+    .topnav {
+        min-height: fit-content;
+        height: 15vh
+    }
 
     .navLinks { 
         flex-direction: row; 
@@ -241,6 +245,10 @@
 
  @media only screen and (min-width: 768px) {
 
+    .topnav {
+        min-height: fit-content;
+        height: 10vh; 
+    }
     
     .navLinks { 
     display: flex;  /* always visible */
