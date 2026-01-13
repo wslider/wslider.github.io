@@ -48,18 +48,20 @@ getUserRepos('wslider');
 setInterval(() => getUserRepos('wslier'), 3600000); // 1 hour
 
 
-document.getElementById('dropMenu').addEventListener('click', navBarLinks); 
-
 
 // Run when the DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
+
+        navBarLinks();
 
         updateFooter();
         setInterval(updateFooter, 3600000); // 1 hour 
     });
 } else {
 
+        navBarLinks();
+        
         updateFooter();
         setInterval(updateFooter, 3600000);
 }

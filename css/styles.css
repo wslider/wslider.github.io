@@ -22,6 +22,7 @@
         justify-content: space-between;
         margin: 0; 
         min-height: fit-content;
+        min-width: fill-viewport;
         width: 100vw;
         align-items: center;
     }
@@ -34,15 +35,13 @@
             align-items: center;
             position: relative; 
             padding: 1rem 1.5rem;
-            background: #333;          /* your color */
+            background: #333;         
             color: white;
             min-height: 8vh;
             width: 100vw; 
         }
-
+    
        
-
-        
 
         .hamburger {
         display: block;
@@ -56,7 +55,7 @@
         top: 0.5rem;
         }
 
-        /* Hamburger icon lines (pure CSS example) */
+        
         .hamburger span {
         display: block;
         width: 28px;
@@ -67,7 +66,7 @@
         }
 
         .navLinks {
-        display: none;               /* crucial for mobile-first */
+        display: none;               
         flex-direction: column;
         left: 0;
         width: 100%;
@@ -93,8 +92,6 @@
             display: flex;
             flex-direction: column;
         }
-
-
 
 
 
@@ -127,6 +124,7 @@
         align-content: center;
         justify-content: space-between;
         min-height: 60vh;
+        width: 100%; 
     }
 
     /* defaults for all containers within .maincontainer */

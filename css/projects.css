@@ -7,6 +7,14 @@
       --starLight: #e1ceff; 
     }
 
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+
+}
+
+    
 
 
 body {
@@ -21,66 +29,98 @@ body {
     color: #f4f4f4;
     background-color: #090f3e;
     justify-content: space-between; 
+    background-image: url('/media/smoky-mountain-sunset.jpg'); 
+    background-size: cover;           
+    background-position: center;      
+    background-repeat: no-repeat;     
+    background-attachment: fixed;     
+   
 }
 
-   /* Navigation menu */
-    .topnav {
-        grid-area: navBar;
-        overflow: hidden;
-        background-color: var(--kentuckyNight);
+       /* Navigation menu */
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; 
+            padding: 1rem 1.5rem;
+            background: #333;         
+            color: white;
+            min-height: 8vh;
+            width: 100vw; 
+        }
+
+       
+
+        
+
+        .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1000;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+        }
+
+        
+        .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+        }
+
+        .navLinks {
+        display: none;               
+        flex-direction: column;
+        left: 0;
         width: 100%;
-    }
+        background: #333;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        max-height: fit-content;
+        }
 
-        .topnav #myLinks {
-            display: none; /* Hidden by default */
+        .navLinks a { 
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+        background: var(--stormCloud);
+        }
+
+        .navLinks.active {
+            display: flex;
             flex-direction: column;
-            background-color: var(--stormCloud); 
-        }
-
-        .topnav a {
-            color: var(--mountainFog);
-            padding: 0.8rem; 
-            font-size: 1.5rem; 
-            display: block;
-            text-align: center;
-        }
-
-        .active {
-            background-color: var(--kentuckyNight);
-            font-weight: 600;
-            color: var(--mountainFog);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--mountainFog);
-        }
-
-        a:hover {
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--starLight);
-        }
-
-        .hiddenContent {
-            display: none;
         }
 
 
 
 .mainContainer {
-    width: 95%; /* Full width with small margins */
+    width: 100vw; /* Full width with small margins */
     margin: 0 auto; /* Center the container */
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
+    box-sizing: border-box;
 }
 
 .projectsArticle {
     width: 100%; 
-    margin: 1rem 0;
-    padding: 0.5rem; 
+    box-sizing: border-box;
+    margin: 2vh 5vw;
+    padding: 2vh 2vw; 
     background-color: #0009175c; 
     text-align: center; 
     border-top: 3px solid var(--mountainFog);
@@ -90,8 +130,19 @@ body {
 box-sizing: border-box;
 width: 100%; 
 border: solid var(--mountainFog) 3px;
-margin-top: 2vh;
+margin: 5vh 0;
 text-align: center;
+font-size: 1.4rem;
+}
+
+.item a {
+    font-weight: 600; 
+    text-emphasis-style: italic;
+    color: var(--mountainFog); 
+}
+
+.item a:hover {
+    color:var(--starLight); 
 }
 
 .image {
@@ -102,7 +153,8 @@ text-align: center;
 
 .header {
     text-align: center;
-    padding: 1rem 0;
+    padding: 5vh 0;
+    font-size: 1.5rem;
 }
 
 
@@ -124,14 +176,24 @@ body {
 }
 
 .topnav {
-        display: flex; 
-        flex-direction: row;
-        font-size: 1.25rem;
+        min-height: fit-content;
+        height: 10vh; 
+    }
+    
+    .navLinks { 
+    display: flex;  /* always visible */
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 60%;
+    width: auto;
+    padding: 2vw;
+    box-shadow: none;
+    background: transparent;
     }
 
-      .topnav > a {
-          text-align: left;
-      }
+    .hamburger {
+        display: none;          /* hidden on larger screens */
+    }
 
 .header > h1 {
     font-size: 3rem;

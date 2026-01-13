@@ -4,8 +4,6 @@ import { updateFooter } from "/js/utils.js";
 // global vaiables
 const container = document.getElementById('myProjects');
 
-// Event listener for nav bar links
-document.getElementById('dropMenu').addEventListener('click', navBarLinks);
 
 // Fetch GitHub repos & sort by last update
 async function getUserRepos(ghUserName) {
@@ -46,6 +44,8 @@ getUserRepos('wslider');
 setInterval(() => getUserRepos('wslider'), 3600000);
 
 // Update footer every hour
+navBarLinks(); 
+
 updateFooter();
 setInterval(updateFooter, 3600000); 
     
