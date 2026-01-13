@@ -22,7 +22,8 @@
         justify-content: space-between;
         margin: 0; 
         min-height: fit-content;
-        max-width: 100vw;
+        width: 100vw;
+        align-items: center;
     }
 
 
@@ -31,15 +32,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative; 
             padding: 1rem 1.5rem;
             background: #333;          /* your color */
-            color: white
+            color: white;
+            min-height: 8vh;
+            width: 100vw; 
         }
 
-        .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        }
+       
+
+        
 
         .hamburger {
         display: block;
@@ -48,6 +51,9 @@
         cursor: pointer;
         padding: 0.5rem;
         z-index: 1000;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
         }
 
         /* Hamburger icon lines (pure CSS example) */
@@ -75,7 +81,7 @@
             color: white;
             text-decoration: none;
             padding: 1rem 0;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             border-bottom: 1px solid rgba(255,255,255,0.1); 
         }
 
