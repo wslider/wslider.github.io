@@ -17,17 +17,45 @@ export function updateCssTheme() {
 
 
 export function navBarLinks() {
-    const myLinks = document.getElementById("myLinks");
-    const currentDisplay = window.getComputedStyle(myLinks).display;
-    const topNavBar = document.getElementById('topNavBar'); 
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('myLinks');
 
-    if (currentDisplay === "block" || currentDisplay === "flex") {
-        myLinks.style.display = "none";
-    } else  {
-        myLinks.style.display = "flex";
-        topNavBar.style.display = "flex";  
-    } 
+  if (!hamburger || !navLinks) return;
+
+  function toggleMenu() {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isOpen);
+    navLinks.classList.toggle('active');
+  }
+
+  function closeMenu() {
+    hamburger.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('active');
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Auto-close when resizing to desktop size
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
 }
+
+
 
 
 export function updateFooter() {

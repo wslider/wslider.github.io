@@ -22,52 +22,80 @@
         justify-content: space-between;
         margin: 0; 
         min-height: fit-content;
-        max-width: 100vw;
+        width: 100vw;
+        align-items: center;
     }
+
 
     /* Navigation menu */
-    .topnav {
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; 
+            padding: 1rem 1.5rem;
+            background: #333;          /* your color */
+            color: white;
+            min-height: 8vh;
+            width: 100vw; 
+        }
+
+       
+
+        
+
+        .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1000;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+        }
+
+        /* Hamburger icon lines (pure CSS example) */
+        .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+        }
+
+        .navLinks {
+        display: none;               /* crucial for mobile-first */
         flex-direction: column;
-        overflow: hidden;
-        background-color: var(--kentuckyNight);
+        left: 0;
         width: 100%;
-        min-height: 8vh;
-    }
+        background: #333;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        max-height: fit-content;
+        }
 
-        .topnav #myLinks {
-            display: none; /* Hidden by default */
+        .navLinks a { 
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+        background: var(--stormCloud);
+        }
+
+        .navLinks.active {
+            display: flex;
             flex-direction: column;
-            background-color: var(--stormCloud); 
         }
 
-        .topnav a {
-            color: var(--mountainFog);
-            padding: 1rem; 
-            font-size: 1.5rem; 
-            display: block;
-            text-align: center;
-        }
 
-        .active {
-            background-color: var(--kentuckyNight);
-            font-weight: 600;
-            color: var(--mountainFog);
-        }
 
-        a {
-            text-decoration: none;
-            color: var(--mountainFog);
-        }
-
-        a:hover {
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--starLight);
-        }
-
-        .hiddenContent {
-            display: none;
-        }
 
 
 
@@ -183,25 +211,13 @@
 
 @media (min-width: 500px) and (orientation: landscape) {
 
-     .topnav {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 3vw;
-        font-size: .9rem;
-    }
 
-        .topnav #myLinks {
-            display: none; /* Hidden by default */
-            flex-direction: row;
-            justify-content: flex-start;
-            background-color: var(--stormCloud); 
-            gap: 2vw;
-        }
-
-      .topnav > a {
-          text-align: left;
-          font-size: 1.1rem;
-      }
+    .navLinks { 
+        flex-direction: row; 
+        justify-content: space-around; 
+        min-width: 60%;
+        width: auto;
+        padding: 0.5rem; }
 
       .topnav #myLinks > a {
           font-size: 1.1rem;
@@ -226,32 +242,26 @@
  @media only screen and (min-width: 768px) {
 
     
-     .topnav {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 2vw;
-        font-size: 1.25rem;
-        padding: 0 3vw 0 -1vw;
+    .navLinks { 
+    display: flex;  /* always visible */
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 60%;
+    width: auto;
+    padding: 2vw;
+    box-shadow: none;
+    background: transparent;
     }
 
-        .topnav #myLinks {
-            display: none; /* Hidden by default */
-            flex-direction: row;
-            justify-content: space-evenly;
-            background-color: var(--stormCloud); 
-            gap: 2vw;
-        }
-
-      .topnav > a {
-          text-align: left;
-      }
+    .hamburger {
+        display: none;          /* hidden on larger screens */
+    }
     
     .header {
         font-size: 1.4rem;
         height: 30vh;
     }
   
-    
 
     .mainContainer {
         display: flex; 
@@ -273,15 +283,15 @@
 /*     } else if (window.innerWidth < 768) {
         myLinks.style.display = "flex";
         myLinks.style.flexDirection = "column";
-        topNavBar.style.display = "flex";
-        topNavBar.style.flexDirection = "column"; 
+        topnavBar.style.display = "flex";
+        topnavBar.style.flexDirection = "column"; 
     } else {
         myLinks.style.display = "flex";
         myLinks.style.flexDirection = "row";
         myLinks.style.justifyContent = "space-evenly"
         myLinks.style.gap = "2vw"
-        topNavBar.style.display = "flex"; 
-        topNavBar.style.flexDirection = "row"; 
-        topNavBar.style.justifyContent = "flex-start";
-        topNavBar.style.gap = "5vw"; 
-        topNavBar.style.padding = "0 3vw 0 -1vw"; */ 
+        topnavBar.style.display = "flex"; 
+        topnavBar.style.flexDirection = "row"; 
+        topnavBar.style.justifyContent = "flex-start";
+        topnavBar.style.gap = "5vw"; 
+        topnavBar.style.padding = "0 3vw 0 -1vw"; */ 

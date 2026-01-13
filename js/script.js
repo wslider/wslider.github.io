@@ -48,7 +48,7 @@ function updateLocalTimeGreeting() {
 
 // Event listeners
 
-document.getElementById('dropMenu').addEventListener('click', navBarLinks); 
+
 
 // Run when the DOM is ready
 if (document.readyState === 'loading') {
@@ -62,6 +62,8 @@ if (document.readyState === 'loading') {
 
         updateFooter();
         setInterval(updateFooter, 3600000); // 1 hour 
+
+        navBarLinks();
     });
 } else {
         
@@ -73,6 +75,8 @@ if (document.readyState === 'loading') {
 
         updateFooter();
         setInterval(updateFooter, 3600000); // 1 hour 
+
+        navBarLinks();
 }
 
 
