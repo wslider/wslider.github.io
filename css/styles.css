@@ -246,14 +246,14 @@
     .topnav {
         min-height: fit-content;
         height: 10vh; 
+        width: 100%;
     }
     
     .navLinks { 
     display: flex;  /* always visible */
     flex-direction: row;
     justify-content: space-evenly;
-    min-width: 60%;
-    width: auto;
+    width: clamp(fit-content, 60%, 700px);
     padding: 2vw;
     box-shadow: none;
     background: transparent;

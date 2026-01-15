@@ -27,10 +27,306 @@ body {
         --spacing-md:     clamp(1rem, 4vw, 2rem);
         --spacing-lg:     clamp(2rem, 6vw, 4rem);
         --sprucePine: #003a00; 
+        --bluegrass: #005500;
         --kentuckyNight: #000d08;
         --mountainFog: #f0fff8; 
         --stormCloud: #333849;
         --blueRidgeParkway: #002167;
+        --midnightBlue: #0d0033;
         --starLight: #e1ceff; 
         
     }
+
+/* Apply base font size */
+html { 
+    font-size: var(--font-size-base); 
+}
+
+body { 
+    color: var(--kentuckyNight); 
+    background: var(--mountainFog); 
+}
+
+/* Accessibility helpers */
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+    scroll-behavior: auto; 
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:  var(--kentuckyNight);
+    --color-text: var(--mountainFog);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg:  var(--bluegrass);
+    --color-text: var(--kentuckyNight);
+  }
+}
+
+/* Base styles - mobile first*/
+
+/* Layout containers and common elements*/
+.body {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0; 
+        min-height: fit-content;
+        min-width: fill-viewport;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .header {
+        width: 100%;
+        max-width: var(--max-width);
+        padding: var(--spacing-md);
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+
+
+    .mainContainer {
+        flex: 1; 
+        width: 100%;
+        max-width: var(--max-width);
+        padding: var(--spacing-md);
+        box-sizing: border-box;
+    }
+
+    .container {
+        border-radius: 8px;
+        width: 97%;
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        box-shadow: 3px 3px #001d08;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    .imageContainer {
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .containerTitle {
+        align-self: center;
+        text-align: center;
+    }
+
+    .containerImg {
+        align-self: center;
+        max-height: 30vh;
+        width: auto;
+        max-width: 90%;
+    }
+
+    .buttonsContainer {
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .searchForm {
+        width: clamp (150px, 80%, 400px);
+        border-radius: 10px;
+        padding: var(--spacing-sm); 
+        margin: var(--spacing-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+
+    .button.imageButton , .button , .textInput {
+        font-size: 1rem;
+        align-self: center;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .localTime {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .footer {
+        margin: 25px; 
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+
+
+/* Navigation menu base styles*/
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; 
+            padding: 1rem 1.5rem;
+            background: var(--midnightBlue);        
+            color: var(--mountainFog);
+            min-height: 8vh;
+            width: 100vw; 
+        }
+    
+       
+
+        .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1000;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+        }
+
+        
+        .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+        }
+
+        .navLinks {
+        display: none;               
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        max-height: fit-content;
+        }
+
+        .navLinks a { 
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--blueRidgeParkway)
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+        background: var(--stormCloud);
+        }
+
+        .navLinks.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+
+/* Small tablet / landscape mobile – rarely needed */
+@media (min-width: 480px) { 
+    .mainContainer {
+        padding: var(--spacing-md);
+    }
+    .container { 
+        padding: var(--spacing-md); 
+    }
+}
+
+/* Tablet / narrow desktop – switch to Grid here */
+@media (min-width: 768px) {
+  .body {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, var(--max-width)) 1fr;
+    justify-items: center;
+    grid-template-areas: 
+      "nav nav nav"
+      "header header header"
+      "main main main"
+      "aside aside aside"
+      "footer footer footer";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+
+    .topnav {
+        display: flex;  /* always visible */
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: clamp(fit-content, 10vh, 12vh);
+        grid-area: nav;
+        width: 100%;
+    }
+
+    .navLinks {
+        display: flex;               
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: clamp(fit-content, 60%, 100%);
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        max-height: fit-content;
+
+    }
+  
+    .hamburger {
+        display: none; 
+    }
+
+    .header {
+        grid-area: header;
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+    .mainContainer {
+        grid-area: main;
+        padding: var(--spacing-lg);
+    }
+
+    .aside {
+        grid-area: aside;
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+  .footer {
+        grid-area: footer;
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+}
+
+/* Standard desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--spacing-lg);
+  }
+}
