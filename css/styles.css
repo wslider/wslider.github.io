@@ -195,8 +195,16 @@ body {
       .localTime {
         font-size: clamp(1.2rem, 4vw + 0.6rem, 1.5rem);
         font-weight: 600;
-        margin: var(--spacing-sm) 0;
-        color: var(--mountainFog);           
+        margin: var(--spacing-sm);
+        padding: var(--spacing-sm); 
+        color: var(--mountainFog);  
+        text-align: center;
+        align-self: center;
+      }
+
+      .localTime {
+        text-align: center;
+        align-self: center;
       }
 
       /* Social links container */
