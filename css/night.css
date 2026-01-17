@@ -1,6 +1,7 @@
-.body {background-color: #070031;
-    color:#ffffffdf;
-    background-image: url('/media/rainierNightSky.jpeg'); 
+.body {
+  background-color: #070031;
+  color:#ffffffdf;
+  background-image: url('/media/rainierNightSky.jpeg'); 
   background-size: cover;           
   background-position: center;      
   background-repeat: no-repeat;     

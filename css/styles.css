@@ -93,6 +93,7 @@ body {
         padding: var(--spacing-md);
         box-sizing: border-box;
         text-align: center;
+        height: fit-content + 2vh;
     }
 
 
@@ -284,7 +285,7 @@ body {
             padding: 1rem 1.5rem;
             background: var(--midnightBlue);        
             color: var(--mountainFog);
-            min-height: 8vh;
+            min-height: 10vh;
             width: 100%; 
         }
     
