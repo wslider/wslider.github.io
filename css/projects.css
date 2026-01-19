@@ -37,22 +37,20 @@ body {
    
 }
 
-       /* Navigation menu */
+     /* Navigation menu base styles*/
         .topnav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative; 
             padding: 1rem 1.5rem;
-            background: #333;         
-            color: white;
-            min-height: 8vh;
-            width: 100vw; 
+            background: var(--midnightBlue);        
+            color: var(--mountainFog);
+            min-height: 10vh;
+            width: 100%; 
         }
-
+    
        
-
-        
 
         .hamburger {
         display: block;
@@ -81,7 +79,6 @@ body {
         flex-direction: column;
         left: 0;
         width: 100%;
-        background: #333;
         padding: 1rem;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         max-height: fit-content;
@@ -92,7 +89,7 @@ body {
             text-decoration: none;
             padding: 1rem 0;
             font-size: 1.4rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            border-bottom: 1px solid var(--blueRidgeParkway)
         }
 
         .nav-links a:hover, .nav-links a:focus {
@@ -176,23 +173,28 @@ body {
 }
 
 .topnav {
-        min-height: fit-content;
-        height: 10vh; 
-    }
-    
-    .navLinks { 
-    display: flex;  /* always visible */
-    flex-direction: row;
-    justify-content: space-evenly;
-    min-width: 60%;
-    width: auto;
-    padding: 2vw;
-    box-shadow: none;
-    background: transparent;
+        display: flex;  /* always visible */
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: clamp(fit-content, 10vh, 12vh);
+        grid-area: nav;
+        width: 100%;
     }
 
+    .navLinks {
+        display: flex;               
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: clamp(fit-content, 60%, 100%);
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        max-height: fit-content;
+
+    }
+  
     .hamburger {
-        display: none;          /* hidden on larger screens */
+        display: none; 
     }
 
 .header > h1 {
