@@ -1,26 +1,23 @@
-     :root {
-      --sprucePine: #003a00; 
-      --kentuckyNight: #000d08;
-      --mountainFog: #f0fff8; 
-      --stormCloud: #333849;
-      --blueRidgeParkway: #002167;
-      --starLight: #e1ceff; 
-    }
-
-* {
-    box-sizing: border-box;
-    margin: 0; 
-    padding: 0; 
-
+*, *::before, *::after {
+  box-sizing: border-box;          
+  margin: 0;                       
+  padding: 0;
 }
 
-    
+html {
+  scroll-behavior: smooth;         
+  scroll-padding-top: 5rem;        
+}
 
-
-body {
-    display: flex; 
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh; 
+  max-width: 100dvw;  
+  box-sizing: border-box;    
+  display: flex; 
     flex-direction: column;
-    width: 100%;
+    width: 100dvw;
     min-height: 100vh; 
     padding: 0;
     margin: 0;
@@ -33,9 +30,68 @@ body {
     background-size: cover;           
     background-position: center;      
     background-repeat: no-repeat;     
-    background-attachment: fixed;     
-   
+    background-attachment: fixed;       
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+        --max-width:      clamp(320px, 90vw, 100%);
+        --font-size-base: clamp(15px, 2.5vw + 0.5rem, 18px);
+        --font-size-h1:   clamp(2rem, 6vw + 1rem, 4rem);
+        --font-size-h2:   clamp(1.6rem, 5vw + 0.8rem, 3rem);
+        --spacing-sm:     clamp(0.5rem, 2vw, 1rem);
+        --spacing-md:     clamp(1rem, 4vw, 2rem);
+        --spacing-lg:     clamp(2rem, 6vw, 4rem);
+        --sprucePine: #003a00; 
+        --bluegrass: #005500;
+        --kentuckyNight: #000d08;
+        --mountainFog: #f0fff8; 
+        --stormCloud: #333849;
+        --blueRidgeParkway: #002167;
+        --midnightBlue: #0d0033;
+        --marianaTrench: #00001a;
+        --starLight: #e1ceff; 
+        
+    }
+
+/* Apply base font size */
+html { 
+    font-size: var(--font-size-base); 
+}
+
+body { 
+    color: var(--kentuckyNight); 
+    background: var(--mountainFog); 
+}
+
+/* Accessibility helpers */
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+    scroll-behavior: auto; 
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:  var(--kentuckyNight);
+    --color-text: var(--mountainFog);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg:  var(--mountainFog);
+    --color-text: var(--kentuckyNight);
+  }
+}
+    
+
+
+
 
      /* Navigation menu base styles*/
         .topnav {
@@ -48,6 +104,7 @@ body {
             color: var(--mountainFog);
             min-height: 10vh;
             width: 100%; 
+            box-sizing: border-box;
         }
     
        
@@ -104,7 +161,7 @@ body {
 
 
 .mainContainer {
-    width: 100vw; /* Full width with small margins */
+    width: 95%; /* Full width with small margins */
     margin: 0 auto; /* Center the container */
     padding: 1rem 0;
     display: flex;
@@ -116,9 +173,8 @@ body {
 .projectsArticle {
     width: 100%; 
     box-sizing: border-box;
-    margin: 2vh 5vw;
-    padding: 2vh 2vw; 
-    background-color: #0009175c; 
+    margin: 2vh 0;
+    padding-top: 2vh; 
     text-align: center; 
     border-top: 3px solid var(--mountainFog);
 }
@@ -130,6 +186,7 @@ border: solid var(--mountainFog) 3px;
 margin: 5vh 0;
 text-align: center;
 font-size: 1.4rem;
+background: linear-gradient(0deg, rgba(0, 1, 14, 0) 10%, rgba(0, 1, 14, 0.682) 100%) no-repeat;
 }
 
 .item a {
@@ -143,9 +200,10 @@ font-size: 1.4rem;
 }
 
 .image {
-    max-width: 100%; /* Responsive image */
+    max-width: 95%; /* Responsive image */
     height: auto;
     margin: 1rem 0;
+    box-sizing: border-box;
 }
 
 .header {
