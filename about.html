@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" id="customStyleSheet" href="css/evening.css"> 
+    <link rel="stylesheet" id="customStyleSheet" href="css/night.css"> 
     <title>About</title>
 </head>
-<body>
+<body class="body">
+
     <nav class="topnav" id="topNavBar">
-     <a class="active" id="dropMenu"> ≡ Menu</a>
-        <div id="myLinks">
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+        <div class="navLinks" id="myLinks">
             <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
             <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
+
     <header class="header">
         <h1>About Me</h1>
     </header>
@@ -25,11 +29,14 @@
         <article class="container" id="item">
             <h2>Coming Soon</h2>
         </article>
-        <article class="container" id="item2">
-            <a href="gallery.html"><h3>Check out the Photo Gallery</h3></a>
+        <article class="container" id="moviesArticle">
+            <h2>My Favorite Movies</h2>
+            <div id="moviesContainer" class="moviesContainer container">
+                <!-- Movie items will be dynamically inserted here -->
+            </div>            
         </article>
     </main>
     <footer class="footer" id="footer">
-    <script type="module"  src="/js/script.js"></script>
+    <script type="module"  src="js/about.js"></script>
 </body>
 </html>
