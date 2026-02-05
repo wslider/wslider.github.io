@@ -7,7 +7,7 @@ const movieId = 11571;
 // Later: change to → const favoriteMovieIds = [11571, 157336 /* Interstellar */, /* more IDs */];
 
 const tmdbBase = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=en-US`;
-const proxyPrefix = 'https://corsproxy.io/?';
+const proxyPrefix = 'https://api.allorigins.win/raw?url=';
 const encodedUrl = encodeURIComponent(tmdbBase);
 const fullProxyUrl = `${proxyPrefix}${encodedUrl}`;
 
