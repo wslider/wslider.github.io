@@ -160,6 +160,14 @@ body {
         justify-content: space-evenly;
     }
 
+    .moviePoster {
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        margin-bottom: var(--spacing-sm);
+    }
 
     .button.imageButton , .button , .textInput {
         font-size: 1rem;
