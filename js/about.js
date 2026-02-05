@@ -1,24 +1,20 @@
 import { navBarLinks } from "./utils.js";
 import { updateFooter } from "./utils.js";
 
-const TMDB_READ_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNTIwZjAzMzYyNGZlMjJmOTliZTljMDdiMTZjNzc0MiIsIm5iZiI6MTc3MDIzOTQzNy42MDE5OTk4LCJzdWIiOiI2OTgzYjVjZGJiODU5ZGM5ODc5MTJhMjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.EPWgUxbPcQH56AHW_h2bXUBpLBOrQADyQ9jdNUXS8Sw';
+const TMDB_API_KEY = 'e520f033624fe22f99be9c07b16c7742';
 
 const movieId = 11571; 
 // Later: change to → const favoriteMovieIds = [11571, 157336 /* Interstellar */, /* more IDs */];
 
+const tmdbBase = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=en-US`;
 const proxyPrefix = 'https://corsproxy.io/?';
-const tmdbBase = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
-
 const encodedUrl = encodeURIComponent(tmdbBase);
 const fullProxyUrl = `${proxyPrefix}${encodedUrl}`;
 
-const headers = {
-    'Authorization': `Bearer ${TMDB_READ_TOKEN}`
-};
 
 async function fetchMoviePoster() {
-    try {
-        const response = await fetch(fullProxyUrl, { headers });
+     try {
+        const response = await fetch(fullProxyUrl); 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
