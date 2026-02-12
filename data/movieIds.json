@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "tmdbId": 11571,
+        "movieTitle": "Journey to the Center of the Earth (1959)"
+    },
+    {
+        "id": 2,
+        "tmdbId": 120,
+        "movieTitle": "The Lord of the Rings: The Fellowship of the Ring"
+    },
+    {
+        "id": 3,
+        "tmdbId": 121,
+        "movieTitle": "The Lord of the Rings: The Two Towers"
+    },
+    {
+        "id": 4,
+        "tmdbId": 122,
+        "movieTitle": "The Lord of the Rings: The Return of the King"
+    }
+]
