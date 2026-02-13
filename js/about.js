@@ -1,8 +1,12 @@
 import { navBarLinks } from "./utils.js";
 import { updateFooter } from "./utils.js";
 
+// === CONFIG ===
+const PROXY_BASE = 'https://wslider-portfolio-site.wslider2000.workers.dev/';  
 
-const proxyPrefix = 'https://api.allorigins.win/raw?url=';
+
+// Optional fallback public CORS proxy (ONLY for local testing — do NOT use in production)
+// const FALLBACK_PROXY = 'https://api.allorigins.win/raw?url=';
 
 async function getMovieIds() {
   try {
@@ -10,16 +14,18 @@ async function getMovieIds() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
 
-    // Assuming movieIds.json is array of numbers or {movieId: number} objects
-   const ids = data.map(item => {
-    if (typeof item === 'number') return item;
-    if (item && typeof item === 'object') {
-        return parseInt(item.tmdbId || item.movieId || item.id, 10); // fallback keys
-    }
-    return NaN;
-    }).filter(id => !isNaN(id) && id > 0);
-    
-    return ids.filter(id => !isNaN(id) && id > 0);
+    // Handle both plain array [123, 456] and array of objects [{tmdbId:123}, ...]
+    const ids = data
+      .map(item => {
+        if (typeof item === 'number') return item;
+        if (item && typeof item === 'object') {
+          return parseInt(item.tmdbId || item.movieId || item.id, 10);
+        }
+        return NaN;
+      })
+      .filter(id => !isNaN(id) && id > 0);
+
+    return ids;
   } catch (error) {
     console.error('Error fetching movie IDs:', error);
     return [];
@@ -29,17 +35,29 @@ async function getMovieIds() {
 async function fetchMoviePoster(movieId) {
   if (!movieId) return;
 
-  const tmdbUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=en-US`;
-  const proxyUrl = proxyPrefix + encodeURIComponent(tmdbUrl);
+  // Build the TMDB endpoint path (no api_key here — Worker handles it)
+  const tmdbPath = `movie/${movieId}?language=en-US`;
+  const proxyUrl = PROXY_BASE + tmdbPath;
+
+  // Fallback example (commented out — only use temporarily if Worker is down)
+  // const tmdbFullUrl = `https://api.themoviedb.org/3/${tmdbPath}&api_key=YOUR_KEY_HERE`;
+  // const proxyUrl = FALLBACK_PROXY + encodeURIComponent(tmdbFullUrl);
 
   try {
-    const res = await fetch(proxyUrl);
-    if (!res.ok) throw new Error(`TMDB HTTP ${res.status}`);
+    const res = await fetch(proxyUrl, {
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Proxy/TMDB returned ${res.status}`);
+    }
 
     const movie = await res.json();
 
     if (!movie.poster_path) {
-      console.warn(`No poster for movie ${movieId} (${movie.title || 'unknown'})`);
+      console.warn(`No poster available for movie ${movieId} (${movie.title || 'unknown'})`);
       return;
     }
 
@@ -51,7 +69,7 @@ async function fetchMoviePoster(movieId) {
     item.innerHTML = `
       <img 
         src="${posterUrl}" 
-        alt="${movie.title || 'Movie Poster'}" 
+        alt="Poster for ${movie.title || 'movie'}" 
         class="moviePoster" 
         loading="lazy" 
         onerror="this.src='https://via.placeholder.com/300x450?text=No+Poster';"
@@ -69,7 +87,7 @@ async function fetchMoviePoster(movieId) {
 async function displayMoviePosters() {
   const container = document.getElementById('moviesContainer');
   if (!container) {
-    console.error('#moviesContainer not found');
+    console.error('#moviesContainer element not found in DOM');
     return;
   }
 
@@ -78,30 +96,31 @@ async function displayMoviePosters() {
   const movieIds = await getMovieIds();
 
   if (movieIds.length === 0) {
-    container.innerHTML = '<p>No movies found. Add some to data/movieIds.json!</p>';
+    container.innerHTML = '<p>No movies found. Add some IDs to <code>data/movieIds.json</code>!</p>';
     return;
   }
 
   // Clear loading message
   container.innerHTML = '';
 
-  // Parallel fetches (Promise.all) — much faster UX
+  // Fetch all in parallel — good for <50 movies
+  // For 100+ movies: consider batching (e.g. 10 at a time) to avoid browser limits
   await Promise.all(
-    movieIds.map(async (id) => {
-      await fetchMoviePoster(id);
-    })
+    movieIds.map(id => fetchMoviePoster(id))
   );
 }
 
-// DOM ready + init
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   displayMoviePosters().catch(err => {
-    console.error('Init error:', err);
-    document.getElementById('moviesContainer').innerHTML = 
-      '<p style="color: red;">Failed to load movies. Check console.</p>';
+    console.error('Initialization error:', err);
+    const container = document.getElementById('moviesContainer');
+    if (container) {
+      container.innerHTML = '<p style="color: red;">Failed to load movies. Check console for details.</p>';
+    }
   });
 
   updateFooter();
-  setInterval(updateFooter, 3600000); // 1 hour
+  setInterval(updateFooter, 3600000); // update footer every hour
   navBarLinks();
 });
