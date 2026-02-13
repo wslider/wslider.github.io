@@ -1,7 +1,6 @@
 import { navBarLinks } from "./utils.js";
 import { updateFooter } from "./utils.js";
 
-const TMDB_API_KEY = 'e520f033624fe22f99be9c07b16c7742'; // ← Move to .env in production!
 
 const proxyPrefix = 'https://api.allorigins.win/raw?url=';
 
