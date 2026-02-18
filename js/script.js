@@ -1,96 +1,96 @@
-import { updateCssTheme } from "./utils.js";
-import { navBarLinks } from "./utils.js";
-import { updateFooter } from "./utils.js";
-import { displayRandomImage } from "./gallery.js";  
-import { searchAndDisplayImage } from "./gallery.js";
+import { updateCssTheme, navBarLinks, updateFooter } from "./utils.js";
+import { displayRandomImage, searchAndDisplayImage } from "./gallery.js";
 
-
-
-// Local Time Greeting Functionality
-
-const customeGreeting = document.getElementById('customGreeting');
+// ────────────────────────────────────────────────
+// Greeting & Time
+// ────────────────────────────────────────────────
 
 const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];   
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
-
-
-const createGreetingStr = ( year, month, day, hour, minsPadded, amPm, timezoneLabel) => {
-   return `${year} ${month} ${day}  ${hour}:${minsPadded} ${amPm}. ${timezoneLabel}`;
-  }
+const createGreetingStr = (year, month, day, hour, minsPadded, amPm) => {
+  return `${year} ${month} ${day} ${hour}:${minsPadded} ${amPm} local time 📍`;
+};
 
 function updateLocalTimeGreeting() {
   const now = new Date();
   const year = now.getFullYear();
   const month = monthNames[now.getMonth()];
-  const day = now.getDate().toString().padStart(2, '0');
-  const hour24 = now.getHours();  // For greeting logic
-  const mins = now.getMinutes().toString().padStart(2, '0');
-  let hour = hour24;
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-  hour = hour % 12;
-  hour = hour ? hour : 12;  // 12-hour format
+  const day = now.getDate().toString().padStart(2, "0");
+  let hour = now.getHours();
+  const minsPadded = now.getMinutes().toString().padStart(2, "0");
+  const amPm = hour >= 12 ? "PM" : "AM";
+  hour = hour % 12 || 12; // 12-hour format (0 → 12)
 
+  const greetingText = createGreetingStr(year, month, day, hour, minsPadded, amPm);
 
-  const fullLocalGreetingText = createGreetingStr(year, month, day, hour, mins, amPm, 'local time 📍');
-  
-  // Update the DOM element
-  const localTimeGreeting = document.getElementById('localTimeGreeting');
-  if (localTimeGreeting) {
-    localTimeGreeting.textContent = fullLocalGreetingText;
-  }
-  else {
-    console.error('Element with ID localTimeGreeting not found');
+  const el = document.getElementById("localTimeGreeting");
+  if (el) {
+    el.textContent = greetingText;
+  } else {
+    console.warn("Element #localTimeGreeting not found");
   }
 }
 
-// Update every minute
+// ────────────────────────────────────────────────
+// Initialization
+// ────────────────────────────────────────────────
 
-// Event listeners
+function init() {
+  // Theme & UI
+  updateCssTheme();
+  setInterval(updateCssTheme, 60000);
 
-document.getElementById('imageButton').addEventListener('click', displayRandomImage);
+  // Time greeting
+  updateLocalTimeGreeting();
+  setInterval(updateLocalTimeGreeting, 60000);
+
+  // Footer
+  updateFooter();
+  setInterval(updateFooter, 3600000); // 1 hour
+
+  navBarLinks();
+
+}
+
+// Event Listeners
+
+const imageButton = document.getElementById("imageButton");
+if (imageButton) {
+  imageButton.addEventListener("click", displayRandomImage);
+
+  // Uncomment lines below if mobile taps are unresponsive
+  // imageButton.addEventListener("touchend", (e) => {
+  //   e.preventDefault();
+  //   displayRandomImage();
+  // });
+}
 
 const searchForm = document.getElementById("searchImagesForm");
 if (searchForm) {
   searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();           // ← Stops reload
-    searchAndDisplayImage();          // Call your function
+    event.preventDefault();           // Stops page reload
+    searchAndDisplayImage();
   });
-}
 
-
-
-// Run when the DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        updateCssTheme();
-        setInterval(updateCssTheme, 60000);
-
-        updateLocalTimeGreeting();
-        setInterval(updateLocalTimeGreeting, 60000); 
-
-        updateFooter();
-        setInterval(updateFooter, 3600000); // 1 hour 
-
-        navBarLinks();
-    });
+  // Optional: touch support for submit button if needed
+  // const searchBtn = document.getElementById("searchImagesButton");
+  // if (searchBtn) {
+  //   searchBtn.addEventListener("touchend", (e) => {
+  //     e.preventDefault();
+  //     searchAndDisplayImage();
+  //   });
+  // }
 } else {
-        
-        updateCssTheme();
-        setInterval(updateCssTheme, 60000);
-
-        updateLocalTimeGreeting();
-        setInterval(updateLocalTimeGreeting, 60000); 
-
-        updateFooter();
-        setInterval(updateFooter, 3600000); // 1 hour 
-
-        navBarLinks();
+  console.warn("Form #searchImagesForm not found");
 }
 
+// Initialize when DOM is ready
 
-
-
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
