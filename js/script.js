@@ -1,6 +1,8 @@
 import { updateCssTheme } from "./utils.js";
 import { navBarLinks } from "./utils.js";
 import { updateFooter } from "./utils.js";
+import { displayRandomImage } from "./gallery.js";  
+import { searchAndDisplayImage } from "./gallery.js";
 
 
 
@@ -47,6 +49,16 @@ function updateLocalTimeGreeting() {
 // Update every minute
 
 // Event listeners
+
+document.getElementById('imageButton').addEventListener('click', displayRandomImage);
+
+const searchForm = document.getElementById("searchImagesForm");
+if (searchForm) {
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();           // ← Stops reload
+    searchAndDisplayImage();          // Call your function
+  });
+}
 
 
 
