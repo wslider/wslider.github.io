@@ -119,10 +119,11 @@ body {
 
 
     .imageContainer {
-        height: 35vh;
+        height: 45vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: var(--spacing-sm);
         align-items: center;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -135,9 +136,9 @@ body {
 
     .containerImg {
         align-self: center;
-        max-height: 30vh;
+        max-height: 32vh;
         width: auto;
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .buttonsContainer {
