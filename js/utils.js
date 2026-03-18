@@ -18,18 +18,21 @@ export function updateCssTheme() {
 
 export function navBarLinks() {
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('myLinks');
+  const navLinks  = document.getElementById('myLinks');
 
   if (!hamburger || !navLinks) return;
 
   function toggleMenu() {
     const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    
     hamburger.setAttribute('aria-expanded', !isOpen);
+    hamburger.classList.toggle('active');       // ← toggles X icon
     navLinks.classList.toggle('active');
   }
 
   function closeMenu() {
     hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('active');       // ← X goes back to hamburger
     navLinks.classList.remove('active');
   }
 
@@ -38,18 +41,6 @@ export function navBarLinks() {
   // Close on outside click
   document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      closeMenu();
-    }
-  });
-
-  // Close on ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  // Auto-close when resizing to desktop size
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
       closeMenu();
     }
   });

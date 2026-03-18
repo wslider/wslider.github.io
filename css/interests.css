@@ -28,52 +28,93 @@ h1 {
     margin-bottom:4%; 
 }
 
-/* navigation menu */
-.topnav {
-  grid-row: 1;
-  grid-column: 1 / span 4; 
-  height: min-content; 
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
-}
+/* Navigation menu base styles*/
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; 
+            padding: 1rem 1.5rem;
+            background: var(--midnightBlue);        
+            color: var(--mountainFog);
+            min-height: 10vh;
+            width: 100%; 
+        }
+    
+       
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
+        .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1000;
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+        }
 
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
+        
+        .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+        }
 
-/* Add a grey background color on mouse-over */
+        /* Hamburger becomes X when menu is open */
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 6px);   /* adjust translate values if needed */
+        }
 
-.active {
-  background-color: #003f17;
-  color: white;
-}
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;   /* middle bar disappears */
+        }
 
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);  /* adjust translate values if needed */
+        }
 
-a {
-  text-decoration: none;
-  color:whitesmoke;
-}
+        /* Optional: make transitions smoother on all spans */
+        .hamburger span {
+          display: block;
+          width: 28px;
+          height: 3px;
+          background: white;
+          margin: 6px 0;
+          transition: all 0.35s ease;   /* slightly longer for nicer feel */
+          transform-origin: center;
+        }
 
-a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-  color: whitesmoke;
-}
+        .navLinks {
+        display: none;               
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        max-height: fit-content;
+        }
 
-.hiddenContent { 
-  display:none; 
-}
+        .navLinks a { 
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--blueRidgeParkway)
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+        background: var(--stormCloud);
+        }
+
+        .navLinks.active {
+            display: flex;
+            flex-direction: column;
+        }
 
 .video {
   max-width: auto;

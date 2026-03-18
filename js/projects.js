@@ -1,5 +1,5 @@
-import { navBarLinks } from "/js/utils.js"; 
-import { updateFooter } from "/js/utils.js";
+import { navBarLinks } from "./utils.js"; 
+import { updateFooter } from "./utils.js";
 
 // global vaiables
 const container = document.getElementById('myProjects');

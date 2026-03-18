@@ -263,7 +263,7 @@ html {
 
 
     /* Navigation styles */
-    /* Navigation menu base styles*/
+ /* Navigation menu base styles*/
         .topnav {
             display: flex;
             justify-content: space-between;
@@ -276,6 +276,8 @@ html {
             width: 100%; 
         }
     
+       
+
         .hamburger {
         display: block;
         background: none;
@@ -296,6 +298,30 @@ html {
         background: white;
         margin: 6px 0;
         transition: all 0.3s ease;
+        }
+
+        /* Hamburger becomes X when menu is open */
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 6px);   /* adjust translate values if needed */
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;   /* middle bar disappears */
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);  /* adjust translate values if needed */
+        }
+
+        /* Optional: make transitions smoother on all spans */
+        .hamburger span {
+          display: block;
+          width: 28px;
+          height: 3px;
+          background: white;
+          margin: 6px 0;
+          transition: all 0.35s ease;   /* slightly longer for nicer feel */
+          transform-origin: center;
         }
 
         .navLinks {
@@ -324,7 +350,6 @@ html {
             display: flex;
             flex-direction: column;
         }
-
 
 @media only screen and (min-width: 768px) {
 

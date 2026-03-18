@@ -1,3 +1,5 @@
+import { navBarLinks } from "./utils.js";
+
 // Select DOM elements
 const galleryImage = document.getElementById('galleryImage');
 const imageCaption = document.getElementById('imageCaption');
