@@ -117,6 +117,9 @@ body {
         box-sizing: border-box;
     }
 
+    .project-list {
+      text-align: left;
+    }
 
     .imageContainer {
         height: 45vh;
