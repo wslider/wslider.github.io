@@ -1,11 +1,12 @@
 //update css and image based on time of day
+//temporary edit to only use night.css as filler
 export function updateCssTheme() {
     const now = new Date();
     const hour = now.getHours();
     const linkElement = document.getElementById('customStyleSheet');
     const customImage = document.getElementById('mainImage');
     if (hour >= 6 && hour <= 18) {
-        linkElement.href = "css/evening.css";
+        linkElement.href = "css/night.css";
         
     }
 
