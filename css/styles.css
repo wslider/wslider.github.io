@@ -107,6 +107,7 @@ div.container {
 }
 
 
+
 /* Center main section headings */
 .container > h2 {
   text-align: center;
@@ -125,6 +126,8 @@ div.container {
   text-align: left;
   width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
+  padding-left: 5vw; 
 }
 
 .project-desc,
