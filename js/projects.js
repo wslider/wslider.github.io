@@ -21,7 +21,11 @@ async function getUserRepos(ghUserName) {
  }
 }
 
+// Fetch names of pinned repos
+
+
 // Display repos in the projects container
+// Filter to display only pinned repos 
 function displayRepos(repos) {
  if (repos.length === 0) {
  container.innerHTML = '<p>No repositories found.</p>';
