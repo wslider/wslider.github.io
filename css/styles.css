@@ -282,6 +282,12 @@ div.container {
   background: rgba(51, 56, 73, 0.15);
 }
 
+.seal {
+  height: 40%;
+  width: 40%; 
+  border-radius: 50%;
+}
+
 /* Footer */
 .footer {
   margin: 25px; 
