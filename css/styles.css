@@ -283,8 +283,8 @@ div.container {
 }
 
 .seal {
-  height: 40%;
-  width: 40%; 
+  height: clamp(50px, 50%, 200px);
+  width: clamp(50px, 50%, 200px);
   border-radius: 50%;
 }
 
