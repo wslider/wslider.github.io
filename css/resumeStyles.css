@@ -139,14 +139,14 @@ html {
         border-radius: 8px;
         padding: var(--spacing-md);
         margin-bottom: var(--spacing-lg);
-        background-color: #33384957;
-        box-shadow: 3px 3px #001d08;
+        background-color: #101833c5;
+        box-shadow: 3px 3px #f4f5f4;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         box-sizing: border-box;
-        background: linear-gradient(0deg, rgba(0, 1, 14, 0) 10%, rgba(0, 1, 14, 0.682) 100%) no-repeat;
+        background: linear-gradient(0deg, rgba(0, 1, 14, 0.545) 10%, rgba(0, 1, 14, 0.923) 100%) no-repeat;
     }
 
        
@@ -159,7 +159,8 @@ html {
             margin-bottom: 15px;
             padding: 10px;
             font-size: var(--font-size-base);
-            background-color: #001d2f;
+            background-color: #060036;
+            border-radius: 15px;
         }
         .item h3 {
             margin-bottom: 5px;
@@ -173,11 +174,12 @@ html {
         }
         .skills ul li {
             display: inline-block;
-            background-color: #15273b;
+            background-color: #00097d;
             color: #fff;
             padding: 5px 10px;
             margin: 5px 5px 5px 0;
             border-radius: 4px;
+            box-shadow: 2px 2px black;
         }
 
 

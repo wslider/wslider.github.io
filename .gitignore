@@ -6,6 +6,8 @@
 .env.test
 .env.production
 .env.production.local
+.env/
+env/
 
 # Build / dist
 dist/
