@@ -51,6 +51,7 @@ scratch/
 playground/
 tmp/
 temp/
+test.py
 
 # Optional: lockfile (uncomment if you really don't want to commit it)
 # package-lock.json
