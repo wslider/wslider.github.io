@@ -7,13 +7,17 @@ const container = document.getElementById('myProjects');
 
 // Fetch GitHub repos & sort by last update
 async function getUserRepos(ghUserName) {
- try {
- const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
- if (!result.ok) {
- throw new Error(`HTTP error! Status: ${result.status}`);
- }
- const repos = await result.json();
- repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+   try {
+   const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
+   if (!result.ok) {
+   throw new Error(`HTTP error! Status: ${result.status}`);
+   }
+   const repos = await result.json();
+
+   const allowedNames = ["anomalous-sightings-archive", "malayalam-explorer-website", "star-hound-tracker", "wslider.github.io", "detour365"]; 
+   repos = repos.filter(repo => allowedNames.includes(repo.name));
+   repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+ 
  displayRepos(repos);
  } catch (error) {
  console.error('Error fetching repos:', error);

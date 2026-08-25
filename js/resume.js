@@ -3,7 +3,7 @@ import { updateFooter } from './utils.js';
 
 
 const projectsContainer = document.getElementById('myProjects');
-const selectedProjects = ['malayalam-explorer-website', 'malayalam-explorer', 'wslider.github.io']; 
+const selectedProjects = ["anomalous-sightings-archive", "malayalam-explorer-website", "star-hound-tracker", "wslider.github.io", "detour365"];  
 //add more project names as needed
 
 // Fetch GitHub repos & sort by last update
