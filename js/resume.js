@@ -6,7 +6,6 @@ const selectProjects = [
     "anomalous-sightings-archive",
     "malayalam-explorer-website",
     "star-hound-tracker",
-    "wslider.github.io",
     "detour365",
 ];
 // add more project names as needed
