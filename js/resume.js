@@ -1,67 +1,81 @@
 import { navBarLinks } from "./utils.js";
-import { updateFooter } from './utils.js';
+import { updateFooter } from "./utils.js";
 
+const projectsContainer = document.getElementById("myProjects");
+const selectProjects = [
+    "anomalous-sightings-archive",
+    "malayalam-explorer-website",
+    "star-hound-tracker",
+    "wslider.github.io",
+    "detour365",
+];
+// add more project names as needed
 
-const projectsContainer = document.getElementById('myProjects');
-const selectedProjects = ["anomalous-sightings-archive", "malayalam-explorer-website", "star-hound-tracker", "wslider.github.io", "detour365"];  
-//add more project names as needed
+const GH_USER = "wslider";
 
-// Fetch GitHub repos & sort by last update
 async function getUserRepos(ghUserName) {
     try {
-        const result = await fetch(`https://api.github.com/users/${ghUserName}/repos`);
+        const result = await fetch(
+            `https://api.github.com/users/${ghUserName}/repos?per_page=100&sort=updated`
+        );
+
         if (!result.ok) {
             throw new Error(`HTTP error! Status: ${result.status}`);
         }
-        const repos = await result.json(); 
-        const filteredRepos = repos.filter(repo => selectedProjects.includes(repo.name));
-        filteredRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+        const repos = await result.json();
+        const filteredRepos = repos.filter((repo) =>
+            selectProjects.includes(repo.name)
+        );
+
+        filteredRepos.sort(
+            (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
+        );
+
         displayRepos(filteredRepos);
-    }
-    catch (error) {
-        console.error('Error fetching repos:', error);
-        projectsContainer.innerHTML = '<p>Error loading repositories. Please try again later.</p>';
+    } catch (error) {
+        console.error("Error fetching repos:", error);
+        projectsContainer.innerHTML =
+            "<p>Error loading repositories. Please try again later.</p>";
     }
 }
 
 function displayRepos(filteredRepos) {
     if (filteredRepos.length === 0) {
-        projectsContainer.innerHTML = '<p>No repositories found.</p>';
+        projectsContainer.innerHTML = "<p>No repositories found.</p>";
         return;
     }
-    projectsContainer.innerHTML = filteredRepos.map(repo => `
+
+    projectsContainer.innerHTML = filteredRepos
+        .map(
+            (repo) => `
         <div class="item projectItem">
             <h3>${repo.name}</h3>
             <div>
-                <a href=${repo.homepage || repo.html_url} target="_blank">Visit Project Website</a>
+                <a href="${repo.homepage || repo.html_url}" target="_blank">Visit Project Website</a>
             </div>
             <div>
                 <a href="${repo.html_url}" target="_blank">View GitHub Repository</a>
             </div>
-            <p class="repoDes">"${repo.description || 'Nothing to see here'}"</p>
+            <p class="repoDes">"${repo.description || "Nothing to see here"}"</p>
             <p>Updated: ${repo.updated_at}</p>
         </div>
-    `).join('');
+    `
+        )
+        .join("");
 }
 
-getUserRepos('wslider');
-setInterval(() => getUserRepos('wslier'), 3600000); // 1 hour
+function initPage() {
+    navBarLinks();
+    updateFooter();
+    setInterval(updateFooter, 3600000); // 1 hour
+}
 
+getUserRepos(GH_USER);
+setInterval(() => getUserRepos(GH_USER), 3600000); // 1 hour
 
-
-// Run when the DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-
-        navBarLinks();
-
-        updateFooter();
-        setInterval(updateFooter, 3600000); // 1 hour 
-    });
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPage);
 } else {
-
-        navBarLinks();
-        
-        updateFooter();
-        setInterval(updateFooter, 3600000);
+    initPage();
 }
