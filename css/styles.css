@@ -106,6 +106,9 @@ div.container {
   background-color: var(--marianaTrench);
 }
 
+.linkButtonDiv{
+  margin: 5%; 
+}
 
 
 /* Center main section headings */
@@ -398,6 +401,13 @@ div.container {
   .container {
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg);
+  }
+
+  .linkButtonDiv {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5vw; 
   }
 }
 
