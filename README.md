@@ -28,4 +28,4 @@
 ## AI USAGE: 
 
 - project.js 
-    -   consulted Grok 3 on reccomendations for sorting GitHub repos by date 
+    -   consulted Grok 3 on reccomendations for sorting GitHub repos by date.
