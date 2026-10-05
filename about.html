@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" id="customStyleSheet" href="css/night.css"> 
-    <title>About</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | William Slider</title>
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" id="customStyleSheet" href="css/night.css">
 </head>
 <body class="body">
-
-    <nav class="topnav" id="topNavBar">
+  <nav class="topnav" id="topNavBar">
     <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
     </button>
-        <div class="navLinks" id="myLinks">
-            <a href="index.html">Home</a>
-            
-            <a href="resume.html">Resume</a>
-            
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+    <div class="navLinks" id="myLinks">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="header">
+    <h1>About Me</h1>
+    <h2 class="tagline">Data analyst and web developer in Louisville, Kentucky.</h2>
+  </header>
+
+  <main class="mainContainer">
+    <section class="container">
+      <h2>Data analysis</h2>
+      <article class="linkCard">
+        <h3>Anomalous Sightings Archive</h3>
+        <p>UAP sightings and Bigfoot reports, mapped and charted.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/wslider/anomalous-sightings-archive" target="_blank" rel="noopener">Github Repo</a>
+          <a class="button" href="https://wslider.github.io/anomalous-sightings-archive" target="_blank" rel="noopener">Website</a>
         </div>
-    </nav>
+      </article>
+      <article class="linkCard">
+        <h3>Star Hound Tracker</h3>
+        <p>Local-first tracker for job applications and status charts.</p>
+        <div class="actions">
+          <a class="button" href="https://github.com/wslider/star-hound-tracker" target="_blank" rel="noopener">Github Repo</a>
+          <a class="button" href="https://wslider.github.io/star-hound-tracker" target="_blank" rel="noopener">Website</a>
+        </div>
+      </article>
+    </section>
 
-    <header class="header">
-        <h1>About Me</h1>
-    </header>
-    <main class="mainContainer">
-        <article class="container" id="item">
-            <h2>Coming Soon</h2>
-        </article>
+    <section class="container">
+      <h2>Web work</h2>
+      <article class="linkCard">
+        <h3>Malayalam Explorer</h3>
+        <p>Flashcards, audio, and a Kerala map for learning Malayalam.</p>
+        <a class="button" href="https://github.com/wslider/malayalam-explorer-website" target="_blank" rel="noopener">Github Repo</a>
+        <a class="button" href="https://malayalamexplorer.com" target="_blank" rel="noopener">Website</a>
+      </article>
+    </section>
 
-        <!-- <article class="container" id="moviesArticle">
-            <h2>My Favorite Movies</h2>
-            <div id="moviesContainer" class="moviesContainer container">
-                
-            </div>            
-        </article> -->
+    <section class="container">
+      <h2>Detour 365</h2>
+      <article class="linkCard">
+        <h3>Bible study and podcast</h3>
+        <p>Weekly studies, verse of the day, and the show archive.</p>
+        <a class="button" href="https://github.com/wslider/detour365" target="_blank" rel="noopener">Github Repo</a>
+        <a class="button" href="https://detour365.org" target="_blank" rel="noopener">Website</a>
+      </article>
+    </section>
 
-    </main>
-    <footer class="footer" id="footer">
-    <script type="module"  src="js/about.js"></script>
+    <section class="container">
+      <h2>Interests</h2>
+      <ul class="interests">
+        <li>Maps</li>
+        <li>Hiking</li>
+        <li>Travel</li>
+        <li>Bigfoot</li>
+        <li>UAPs</li>
+        <li>Side quests</li>
+        <li>Writing</li>
+        <li>Science Fiction</li>
+        <li>Visual art</li>
+        <li>Languages</li>
+        <li>Malayalam</li>
+        <li>Ancient history</li>
+      </ul>
+    </section>
+
+    <section class="container">
+      <h2>Timeline</h2>
+      <ol class="timeline">
+        <li>
+          <h3>Now</h3>
+          <p>Portfolio, data analysis, and web projects</p>
+        </li>
+        <li>
+          <h3>August 2026</h3>
+          <p>Finished Data Analysis Pathway at Code:You</p>
+        </li>
+        <li>
+          <h3>December 2025</h3>
+          <p>Finished Web Development Pathway at Code:You</p>
+        </li>
+        <li>
+          <h3>March 2024</h3>
+          <p>Journey into Coding Starts - inspired by interest in languages and encouragement from developers.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <script type="module" src="js/about.js"></script>
 </body>
 </html>
