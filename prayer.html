@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prayer Requests</title>
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <link rel="stylesheet" href="css/prayer.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Prayer List</h1>
+
+    <form hx-post="/api/prayers"
+          hx-target="#prayer-list"
+          hx-swap="innerHTML"
+          hx-indicator="#indicator">
+      <input type="password" name="passcode" id="passcode" placeholder="Passcode" required>
+      <input type="text" name="name" placeholder="Your name (optional)">
+      <textarea name="prayer" placeholder="Prayer request" required></textarea>
+      <input type="hidden" name="action" value="create">
+      <button type="submit">Submit</button>
+      <span id="indicator" class="htmx-indicator">Saving…</span>
+    </form>
+
+    <h2>Recent Requests</h2>
+    <div id="prayer-list"
+     hx-get="/api/prayers"
+     hx-trigger="load, input delay:400ms from:#passcode"
+     hx-vals="js:{passcode: document.querySelector('#passcode').value}"
+     hx-swap="innerHTML">
+    <p>Enter the passcode to view requests.</p>
+    </div>
+
+  </div>
+  
+  <script>
+  const passcodeInput = document.querySelector("#passcode");
+
+  // Restore previously entered passcode
+  const saved = localStorage.getItem("prayerPasscode");
+  if (saved) {
+    passcodeInput.value = saved;
+  }
+
+  // Save it as the user types
+  passcodeInput.addEventListener("input", () => {
+    localStorage.setItem("prayerPasscode", passcodeInput.value);
+  });
+
+  // Make sure every HTMX request gets the current passcode
+  document.body.addEventListener("htmx:configRequest", (evt) => {
+    const passcode = passcodeInput.value;
+    if (evt.detail.parameters) {
+      evt.detail.parameters.passcode = passcode;
+    }
+  });
+
+  // If we restored a passcode, load the list once the page is ready
+  document.addEventListener("DOMContentLoaded", () => {
+    if (passcodeInput.value) {
+      htmx.trigger("#prayer-list", "load");
+    }
+  });
+</script>
+<footer class="footer" id="footer"></footer>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
