@@ -1,0 +1,180 @@
+:root {
+  --sprucePine: #003a00;
+  --kentuckyNight: #000d08;
+  --mountainFog: #f0fff8;
+  --stormCloud: #333849;
+  --campfireSmoke: #2f2e2eb3;
+  --smokeyMountainMist: #b0c4de;
+  --blueRidgeParkway: #002167;
+  --starLight: #e1ceff;
+  --midnightBlue: #001f3f;
+  --transparentMidnight: #001f3f80;
+  --marianaTrench: #00111f;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+body {
+  background-color: #00062f;
+  background-image: url('/images/rainier-night-sky.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffffdf;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 2rem auto;
+  background: rgba(0, 7, 49, 0.75);
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+h1, h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Main create form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+input, textarea, button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffffdf;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+
+select {
+  background: var(--mountainFog);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--marianaTrench);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* system list items */
+.system {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 0;
+  margin-bottom: 0.25rem;
+}
+
+.system.answered {
+  opacity: 0.75;
+  border-left: 4px solid #4ade80;
+  padding-left: 0.9rem;
+  background: rgba(74, 222, 128, 0.07);
+  border-radius: 4px;
+}
+
+.system p {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.timestamp {
+  font-size: 1.25rem;
+}
+
+.answer-note {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(74, 222, 128, 0.12);
+  border-radius: 4px;
+  font-size: 1.25rem;
+  color: #bbf7d0;
+}
+
+/* Action forms (edit / answer / delete) */
+.actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+.actions form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  width: 100%;
+  flex: auto;
+}
+
+.actions form input[type="text"] {
+  flex: 1;
+  min-width: 120px;
+  font-size: 1.25rem;
+  padding: 0.35rem 0.55rem;
+}
+
+.actions form button {
+  margin-left: auto;
+  font-size: 1.25rem;
+  padding: 0.35rem 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.actions button.deleteButton {
+  padding: 0.35rem 0.75rem;
+}
+
+.htmx-indicator {
+  display: none;
+}
+
+.htmx-request .htmx-indicator {
+  display: inline;
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  opacity: 0.8;
+}

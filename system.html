@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Tracker</title>
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <link rel="stylesheet" href="css/system.css">
+</head>
+<body>
+  <div class="container">
+    <h1>System Tracker</h1>
+
+    <form hx-post="/api/system"
+          hx-target="#day-result"
+          hx-swap="innerHTML"
+          hx-indicator="#indicator">
+      <input type="password" name="passcode" id="passcode" placeholder="Passcode" required>
+
+      <label>Date</label>
+      <input type="date" name="date" required id="date">
+
+      <label>Day Type</label>
+      <select name="day_type">
+        <option value="regular">Regular</option>
+        <option value="front_desk">Front Desk</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+        <option value="special">Special</option>
+      </select>
+
+      <label>Theme</label>
+      <select name="theme">
+        <option value="data_analysis">Data Analysis</option>
+        <option value="web_portfolio">Web / Portfolio</option>
+        <option value="detour">Detour</option>
+        <option value="systems_org">Systems / Org</option>
+        <option value="recovery">Recovery</option>
+      </select>
+
+      <label>Energy (1–5)</label>
+      <input type="number" name="energy_level" min="1" max="5">
+
+      <label>Steps</label>
+      <input type="number" name="step_count" value="10000">
+
+      <label>Highlight</label>
+      <input type="text" name="highlight" placeholder="Highlight of the day">
+
+      <label>Wins</label>
+      <textarea name="wins" placeholder="Wins"></textarea>
+
+      <label>Thanks</label>
+      <textarea name="thanks" placeholder="Gratitude / thanks"></textarea>
+
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Notes"></textarea>
+
+      <input type="hidden" name="action" value="create">
+      <button type="submit">Save Day</button>
+      <span id="indicator" class="htmx-indicator">Saving…</span>
+    </form>
+
+    <div id="day-result"></div>
+
+    <h2>Recent Days</h2>
+    <div id="system-list"
+         hx-get="/api/system"
+         hx-trigger="load, input delay:400ms from:#passcode"
+         hx-vals="js:{passcode: document.querySelector('#passcode').value}"
+         hx-swap="innerHTML">
+      <p>Enter the passcode to view</p>
+    </div>
+  </div>
+
+  <script>
+  const passcodeInput = document.querySelector("#passcode");
+
+  const saved = localStorage.getItem("systemPasscode");
+  if (saved) passcodeInput.value = saved;
+
+  passcodeInput.addEventListener("input", () => {
+    localStorage.setItem("systemPasscode", passcodeInput.value);
+  });
+
+  document.body.addEventListener("htmx:configRequest", (evt) => {
+    const passcode = passcodeInput.value;
+    if (evt.detail.parameters) {
+      evt.detail.parameters.passcode = passcode;
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (passcodeInput.value) {
+      htmx.trigger("#system-list", "load");
+    }
+  });
+  </script>
+
+  <footer class="footer" id="footer"></footer>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
+
