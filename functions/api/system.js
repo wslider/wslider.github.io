@@ -15,7 +15,6 @@ export async function onRequestGet(context) {
       <strong>${day.date}</strong> — ${day.theme || ""}
       ${day.highlight ? `<br>Highlight: ${day.highlight}` : ""}
       ${day.wins ? `<br>Wins: ${day.wins}` : ""}
-      ${day.thanks ? `<br>Thanks: ${day.thanks}` : ""}
     </div>
   `).join("");
 
@@ -39,9 +38,7 @@ export async function onRequestPost(context) {
   const energy_level = form.get("energy_level") || null;
   const step_count = form.get("step_count") || 10000;
   const highlight = form.get("highlight") || null;
-  const wins = form.get("wins") || null;
-  const thanks = form.get("thanks") || null;
-  const notes = form.get("notes") || null;
+  const wins = form.get("wins") || null
 
   await env.DB.prepare(`
     INSERT INTO days (date, day_type, theme, energy_level, step_count, highlight, wins, thanks, notes)
@@ -52,10 +49,8 @@ export async function onRequestPost(context) {
       energy_level = excluded.energy_level,
       step_count = excluded.step_count,
       highlight = excluded.highlight,
-      wins = excluded.wins,
-      thanks = excluded.thanks,
-      notes = excluded.notes
-  `).bind(date, day_type, theme, energy_level, step_count, highlight, wins, thanks, notes).run();
+      wins = excluded.wins
+  `).bind(date, day_type, theme, energy_level, step_count, highlight, wins).run();
 
   return new Response(`<p>Saved ${date}</p>`, {
     headers: { "Content-Type": "text/html" }

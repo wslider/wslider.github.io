@@ -37,23 +37,17 @@
         <option value="recovery">Recovery</option>
       </select>
 
-      <label>Energy (1–5)</label>
-      <input type="number" name="energy_level" min="1" max="5">
-
-      <label>Steps</label>
-      <input type="number" name="step_count" value="10000">
-
       <label>Highlight</label>
       <input type="text" name="highlight" placeholder="Highlight of the day">
 
       <label>Wins</label>
       <textarea name="wins" placeholder="Wins"></textarea>
 
-      <label>Thanks</label>
-      <textarea name="thanks" placeholder="Gratitude / thanks"></textarea>
+      <label>Energy (1–10)</label>
+      <input type="number" name="energy_level" min="1" max="10">
 
-      <label>Notes</label>
-      <textarea name="notes" placeholder="Notes"></textarea>
+      <label>Steps</label>
+      <input type="number" name="step_count" value="10000">
 
       <input type="hidden" name="action" value="create">
       <button type="submit">Save Day</button>
