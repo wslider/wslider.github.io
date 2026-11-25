@@ -17,7 +17,7 @@
 
 body {
   background-color: #00062f;
-  background-image: url('/images/rainier-night-sky.jpg');
+  background-image: url('media/rainierNightSky.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -26,6 +26,7 @@ body {
   margin: 0;
   padding: 2rem 1rem;
   min-height: 100vh;
+  max-width: 100vw;
   font-size: 1.6rem;
 }
 
@@ -58,7 +59,7 @@ input, textarea, button {
   padding: 0.6rem 0.8rem;
   border-radius: 6px;
   font-family: inherit;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 select {
@@ -68,7 +69,7 @@ select {
   padding: 0.6rem 0.8rem;
   border-radius: 6px;
   font-family: inherit;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 input::placeholder,
